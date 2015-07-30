@@ -37,7 +37,16 @@ public class Graph {
     public void ConactMe(Vector2 S, Vector2 i_badRoom)
     {
         Queue<BfsNode> queue = new Queue<BfsNode>();
-        ///////////////////queue.Enqueue()
+        queue.Enqueue(new BfsNode(S, null, 0));
+
+        while(queue.Count != 0)
+        {
+            BfsNode node = queue.Dequeue();
+
+            
+
+        }
+
     }
 
     public void ResetColor()
