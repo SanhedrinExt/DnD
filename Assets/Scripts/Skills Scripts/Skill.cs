@@ -8,7 +8,7 @@ namespace SkillProvider
     public abstract class Skill : NetworkBehaviour
     {
         //time In milliseconds:
-        private readonly int k_Cooldown;
+        private readonly int r_Cooldown;
         public int CooldownTimer { get; private set; }
         private DateTime m_LastUsed = new DateTime();
 
@@ -17,8 +17,8 @@ namespace SkillProvider
         public Skill(int i_Cooldown)
         {
             m_LastUsed = DateTime.Now;
-            k_Cooldown = i_Cooldown;
-            CooldownTimer = k_Cooldown / 2;
+            r_Cooldown = i_Cooldown;
+            CooldownTimer = r_Cooldown / 2;
         }
 
         void Update()
@@ -49,19 +49,19 @@ namespace SkillProvider
         private void ResetCooldwon()
         {
             m_LastUsed = DateTime.Now;
-            CooldownTimer = k_Cooldown;
+            CooldownTimer = r_Cooldown;
         }
     }
 
     public abstract class StackableSkill : Skill
     {
-        private readonly int k_MaxStacks;
+        private readonly int r_MaxStacks;
         public int CurrStacks { get; private set; }
 
         public StackableSkill(int i_Cooldown, int i_MaxStacks) : base(i_Cooldown)
         {
-            k_MaxStacks = i_MaxStacks;
-            CurrStacks = k_MaxStacks;
+            r_MaxStacks = i_MaxStacks;
+            CurrStacks = r_MaxStacks;
         }
 
         public void DeStack()
