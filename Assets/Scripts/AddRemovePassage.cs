@@ -2,10 +2,10 @@
 using System.Collections;
 using SkillProvider;
 
-public class AddRemovePassage : StackableSkill
-{
-    public AddRemovePassage() : base()
-    {
+//public class AddRemovePassage : StackableSkill
+//{
+//    public AddRemovePassage() : base()
+//    {
 
-    }
-}
+//    }
+//}
