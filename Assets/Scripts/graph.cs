@@ -37,17 +37,49 @@ public class Graph {
     public void ConactMe(Vector2 S, Vector2 i_badRoom)
     {
         Queue<BfsNode> queue = new Queue<BfsNode>();
+        List<Vector2> arcivs = new List<Vector2>();
+        arcivs.Add(S);
         queue.Enqueue(new BfsNode(S, null, 0));
+        BfsNode solver = null;
 
         while(queue.Count != 0)
         {
             BfsNode node = queue.Dequeue();
 
-            
+            List<BfsNode> naeibers = getGoodNaeibersForBfs(node, i_badRoom, arcivs);
+            foreach(BfsNode naeiber in naeibers)
+            {
+                if(m_rooms[(int)naeiber.mySpot.y,(int)naeiber.mySpot.x].m_activRoom == true && m_rooms[(int)naeiber.mySpot.y,(int)naeiber.mySpot.x].m_eColor == eColor.Black)
+                {
+                    solver = naeiber;
+                    break;
+                }
+                else
+                {
+                    queue.Enqueue(naeiber);
+                }
+            }
+            if (solver != null) break;
 
         }
-
+        ReconctingGrath(solver);
     }
+
+private void ReconctingGrath(BfsNode solver)
+{
+ 	throw new System.NotImplementedException();
+}
+
+public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,Vector2 i_badRoom,List<Vector2> arcivs)
+{
+    List<BfsNode> nodss = new List<BfsNode>();
+    int x = (int)i_node.mySpot.x; 
+    int y = (int)i_node.mySpot.y;
+    
+    return nodss;
+}
+
+
 
     public void ResetColor()
     {

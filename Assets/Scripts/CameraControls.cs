@@ -30,16 +30,16 @@ public class CameraControls : MonoBehaviour {
         {
             moveCamera(Input.mousePosition);
         }
-
+        
 #elif UNITY_ANDROID  
-        //if (Input.GetTouch(0).phase == TouchPhase.Began)
-        //{
-        //    m_StartPosition = Input.GetTouch(0).position;
-        //}
-        //else if ((Input.GetTouch(0).phase == TouchPhase.Moved)
-        //{
-        //   moveCamera(Input.GetTouch(0).position);
-        //}
+        if (Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            m_StartPosition = Input.GetTouch(0).position;
+        }
+        else if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(0).phase == TouchPhase.Stationary)
+        {
+           moveCamera(Input.GetTouch(0).position);
+        }
 #endif
     }
 
