@@ -39,6 +39,5 @@ public class DragonlingScript : NetworkBehaviour
 
     private void fire()
     {
-        GameObject f = Instantiate(m_FireBallPrefab);
     }
 }
