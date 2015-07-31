@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RoomScript : VisitableObject {
 
-    //private RoomNode roomGraphNode;
+    public RoomNode roomGraphNode;
 
 	// Use this for initialization
 	void Start () {

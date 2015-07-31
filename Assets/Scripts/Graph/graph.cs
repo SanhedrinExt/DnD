@@ -7,6 +7,23 @@ public class Graph {
     public const int c_y = 7;
     public const int c_x = 7;
 
+    private Graph() { }
+
+    static private Graph s_singltonGraph;
+
+    public static Graph GraphSingleton
+    {
+        get
+        {
+            if (s_singltonGraph == null)
+            {
+                s_singltonGraph = new Graph();
+            }
+            return s_singltonGraph;
+        }
+        private set { s_singltonGraph = value; }
+    }
+
     public RoomNode[,] m_rooms = new RoomNode[c_y, c_x];
 
     public void RemovRoom(Vector2 i_roomVec)
@@ -20,7 +37,7 @@ public class Graph {
         }
     }
 
-    public void ConactNaibers(RoomNode i_badRoom)
+    private void ConactNaibers(RoomNode i_badRoom)
     {
        
         foreach(RoomNode room in i_badRoom.m_niebringRooms)
@@ -33,20 +50,46 @@ public class Graph {
         }
        
     }
+    private BfsNode findSortPath(RoomNode i_start , RoomNode i_end)
+    {
+        Queue<BfsNode> queue = new Queue<BfsNode>();
+        List<Vector2> arcivs = new List<Vector2>();
+        queue.Enqueue(new BfsNode(i_start.myPosition, null, 0));
+        BfsNode solver = null;
 
+        while (solver == null)
+        {
+            BfsNode node = queue.Dequeue();
+            foreach (RoomNode room in m_rooms[(int)node.mySpot.y, (int)node.mySpot.x].m_niebringRooms)
+            {
+                BfsNode bfsNode = new BfsNode(room.myPosition, node, node.depth + 1);
+                if (room == i_end)
+                {
+                    solver = bfsNode;
+                    break;
+                }
+                if (arcivs.Contains(bfsNode.mySpot) == false)
+                {
+                    arcivs.Add(bfsNode.mySpot);
+                    queue.Enqueue(bfsNode);
+                }
+            }
+        }
+        return solver;
+    }
     public void ConactMe(Vector2 S, Vector2 i_badRoom)
     {
         Queue<BfsNode> queue = new Queue<BfsNode>();
         List<Vector2> arcivs = new List<Vector2>();
-        arcivs.Add(S);
+        arcivs.Add(S); arcivs.Add(i_badRoom);
         queue.Enqueue(new BfsNode(S, null, 0));
         BfsNode solver = null;
 
-        while(queue.Count != 0)
+        while (solver == null)
         {
             BfsNode node = queue.Dequeue();
 
-            List<BfsNode> naeibers = getGoodNaeibersForBfs(node, i_badRoom, arcivs);
+            List<BfsNode> naeibers = getGoodNaeibersForBfs(node, arcivs);
             foreach(BfsNode naeiber in naeibers)
             {
                 if(m_rooms[(int)naeiber.mySpot.y,(int)naeiber.mySpot.x].m_activRoom == true && m_rooms[(int)naeiber.mySpot.y,(int)naeiber.mySpot.x].m_eColor == eColor.Black)
@@ -59,23 +102,57 @@ public class Graph {
                     queue.Enqueue(naeiber);
                 }
             }
-            if (solver != null) break;
-
         }
         ReconctingGrath(solver);
     }
 
-private void ReconctingGrath(BfsNode solver)
+private void ReconctingGrath(BfsNode i_goodStart)
 {
- 	throw new System.NotImplementedException();
+    BfsNode son = i_goodStart ;
+    BfsNode dad = son.perent;
+
+    while(m_rooms[(int)dad.mySpot.y,(int)dad.mySpot.x].m_activRoom == false)
+    {
+        m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x].ActivatRoom(new List<RoomNode> { m_rooms[(int)son.mySpot.y, (int)son.mySpot.x] });
+        son = dad;
+        dad = dad.perent;
+    }
+    m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x].m_niebringRooms.Add(m_rooms[(int)son.mySpot.y, (int)son.mySpot.x]);
+    m_rooms[(int)son.mySpot.y, (int)son.mySpot.x].m_niebringRooms.Add(m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x]);
 }
 
-public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,Vector2 i_badRoom,List<Vector2> arcivs)
+public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs)
 {
     List<BfsNode> nodss = new List<BfsNode>();
     int x = (int)i_node.mySpot.x; 
     int y = (int)i_node.mySpot.y;
     
+
+    if( x + 1 < c_x && i_arcivs.Contains(m_rooms[y,x + 1].myPosition ) != true )
+    {
+        i_arcivs.Add(m_rooms[y, x + 1].myPosition);
+        nodss.Add(new BfsNode(m_rooms[y, x + 1].myPosition, i_node, i_node.depth + 1));
+    }
+
+    if (x  != 0 && i_arcivs.Contains(m_rooms[y, x - 1].myPosition) != true)
+    {
+        i_arcivs.Add(m_rooms[y, x - 1].myPosition);
+        nodss.Add(new BfsNode(m_rooms[y, x - 1].myPosition, i_node, i_node.depth + 1));
+    }
+
+    if (y + 1 < c_y && i_arcivs.Contains(m_rooms[y + 1, x ].myPosition) != true)
+    {
+        i_arcivs.Add(m_rooms[y + 1,x].myPosition);
+        nodss.Add(new BfsNode(m_rooms[y + 1, x].myPosition, i_node, i_node.depth + 1));
+    }
+
+    if (y != 0 && i_arcivs.Contains(m_rooms[y - 1, x].myPosition) != true)
+    {
+        i_arcivs.Add(m_rooms[y - 1 , x].myPosition);
+        nodss.Add(new BfsNode(m_rooms[y - 1, x].myPosition, i_node, i_node.depth + 1));
+    }
+
+
     return nodss;
 }
 
@@ -130,6 +207,52 @@ public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,Vector2 i_badRoom,List
         }   
         return res;
     }
- 
+
+    public Stack<Vector2> GetVectorPath(Vector3 i_strt, Vector3 i_end)
+    {
+        Stack<Vector2> moveQ = null;
+        RoomNode startR = convertV3toRoomNode(i_strt);
+        RoomNode endR = convertV3toRoomNode(i_end);
+        
+        if(startR != endR)
+        {
+            BfsNode bfsNode = findSortPath(startR, endR);
+            moveQ = getV2PathFromBfsNode( bfsNode);
+        }
+        return moveQ;
+    }
+
+    private Stack<Vector2> getV2PathFromBfsNode(BfsNode i_bfsNode)
+    {
+        Stack<Vector2> stack = new Stack<Vector2>();
+        BfsNode bfsNode = i_bfsNode;
+
+        do
+        {
+            Vector3 v3 = m_rooms[(int)bfsNode.mySpot.y, (int)bfsNode.mySpot.x].refRoom.transform.position;
+            stack.Push(new Vector2(v3.x, v3.y));
+            bfsNode = bfsNode.perent;
+        } while (bfsNode != null);
+
+        return stack;
+    }
+
+   
+
+    private RoomNode convertV3toRoomNode(Vector3 v3)
+    {
+        RoomNode res = null;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(v3.x, v3.y), Vector2.zero, 1);
+        foreach (RaycastHit2D hit in hits)
+        {
+            RoomScript roomS = hit.transform.GetComponent<RoomScript>();
+            if (roomS != null)
+            {
+                res = roomS.roomGraphNode;
+                break;
+            }
+        }
+        return res;
+    }
 	
 }
