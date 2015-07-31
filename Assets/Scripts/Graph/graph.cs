@@ -252,7 +252,11 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
         return stack;
     }
 
-   
+   public void ConactingRooms(Vector2 v1 , Vector2 v2)
+    {
+        m_rooms[(int)v1.y, (int)v1.x].m_niebringRooms.Add(m_rooms[(int)v2.y, (int)v2.x]);
+        m_rooms[(int)v2.y, (int)v2.x].m_niebringRooms.Add(m_rooms[(int)v1.y, (int)v1.x]);
+    }
 
     private RoomNode convertV3toRoomNode(Vector3 v3)
     {
