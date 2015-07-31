@@ -30,6 +30,18 @@ public class CameraControls : MonoBehaviour {
 	void Update () {
         checkMoveCamera();
         checkZoomCamera();
+        checkRotisonCamera();
+    }
+
+    private void checkRotisonCamera()
+    {
+
+            if(Input.touchCount > 1 )
+            {
+
+            }
+        
+
     }
 
     private void checkZoomCamera()
@@ -95,6 +107,6 @@ public class CameraControls : MonoBehaviour {
 
     private void zoomCamera(float i_Zoom)
     {
-        Camera.main.orthographicSize = Camera.main.orthographicSize + i_Zoom >= 1 ? Camera.main.orthographicSize + i_Zoom : Camera.main.orthographicSize;
+        Camera.main.orthographicSize = Camera.main.orthographicSize - i_Zoom >= 1 ? Camera.main.orthographicSize - i_Zoom : Camera.main.orthographicSize;
     }
 }

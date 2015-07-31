@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 /// </summary>
 public class VisitableObject : NetworkBehaviour
 {
-    private Renderer m_Renderer;
+    protected Renderer m_Renderer;
 
     private bool m_HasBeenVisited;
     public bool HasbeenVisited
@@ -23,10 +23,13 @@ public class VisitableObject : NetworkBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         m_Renderer = GetComponent<Renderer>();
+    }
 
+    protected virtual void Start()
+    {
         if (!isServer)
         {
             m_Renderer.enabled = false;

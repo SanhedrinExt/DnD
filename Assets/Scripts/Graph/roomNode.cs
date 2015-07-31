@@ -14,6 +14,12 @@ public class RoomNode  {
     public List<RoomNode> m_niebringRooms;
     public Vector2 myPosition;
 
+    public RoomNode(int x,int y)
+    {
+        m_niebringRooms = new List<RoomNode>();
+        myPosition = new Vector2(x, y);
+    }
+
     public void removNiber(RoomNode i_badNiber)
     {
         m_niebringRooms.Remove(i_badNiber);
@@ -39,39 +45,4 @@ public class RoomNode  {
         }
         m_activRoom = true;
     }
-
-
-    public RoomNode(){}//to do
-
-
-
-
-    /*
-    GameObject refRoom; //todo
-
-    public List<CoradoEge> m_naibringCorador;
-
-    public void AddCorador(CoradoEge i_newCorado)
-    {
-        m_naibringCorador.Add(i_newCorado);
-        return;
-    }
-
-    public void addCoradors(List<CoradoEge> i_Coradors)
-    {
-        foreach(CoradoEge corado in i_Coradors)
-        {
-            AddCorador(corado);
-        }
-    }
-
-    public void removCorado(CoradoEge i_coradoToDelete)
-    {
-        m_naibringCorador.Remove(i_coradoToDelete);
-    }
-    
-
-
-	
-	*/
 }
