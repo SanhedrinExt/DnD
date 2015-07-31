@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public abstract class CharacterScript : NetworkBehaviour {
 
     [SyncVar(hook="OnCharacterHit")]
-    private int m_Health = 10;
+    private int m_Health = 5;
 
     private Renderer m_Renderer;
 
     private Transform m_NameTagSpace;
     private Transform m_NameTag;
+    private Transform m_HealthBar;
+
 
 	// Use this for initialization
 	protected virtual void Start () {
         m_Renderer = GetComponent<Renderer>();
 
         m_NameTag = transform.FindChild("NameTag");
+        m_NameTag = transform.FindChild("HealthBar");
         m_NameTagSpace = GameObject.Find("Name Space").transform;
         transform.SetParent(m_NameTagSpace);
-
 
         if (!isServer && !isLocalPlayer)
         {
@@ -27,7 +30,6 @@ public abstract class CharacterScript : NetworkBehaviour {
         }
         else
         {
-            Debug.Log(isServer + " " + isLocalPlayer);
             m_Renderer.enabled = true;
         }
 
@@ -48,9 +50,20 @@ public abstract class CharacterScript : NetworkBehaviour {
         if (isLocalPlayer && m_NameTag)
         {
             m_NameTag.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2);
+            m_HealthBar.transform.position = transform.position - Vector3.up * (transform.localScale.y / 2);
+        }
+
+        if (isServer || isLocalPlayer)
+        {
+            m_Renderer.enabled = true;
         }
 
         m_NameTag.gameObject.SetActive(m_Renderer.enabled);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CmdDamageCharacter(1);
+        }
 	}
 
     /// <summary>
@@ -60,7 +73,11 @@ public abstract class CharacterScript : NetworkBehaviour {
     [Client]
     private void OnCharacterHit(int i_NewHealth)
     {
-        m_Health = i_NewHealth;
+        m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = false;
+
+        m_Health = i_NewHealth < 0 ? m_Health = 0 : i_NewHealth;
+
+        m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = true;
 
         if (m_Health <= 0)
         {

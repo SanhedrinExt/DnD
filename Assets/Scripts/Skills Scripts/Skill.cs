@@ -37,7 +37,6 @@ namespace SkillProvider
         {
             if (CooldownTimer > 0)
             {
-                Debug.Log("time update");
                 TimeSpan deltaTime = DateTime.Now - LastUse;
                 CooldownTimer = r_Cooldown - (int)deltaTime.TotalMilliseconds;
                 
