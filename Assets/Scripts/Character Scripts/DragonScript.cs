@@ -25,6 +25,10 @@ public class DragonScript : PlayerScript
         m_Entomb = GetComponent<Entomb>();
     }
 
+    public void Update()
+    {
+    }
+
     public enum eSkill
     {
         eAddRemoveRoomClicked,
@@ -62,53 +66,5 @@ public class DragonScript : PlayerScript
     public void OnFireBreath()
     {
         SelectedSkill = eSkill.eFireBreathClicked;
-    }
-
-    private void dwonlightSelectedSkill()
-    {
-        switch (SelectedSkill)
-        {
-            case eSkill.eAddRemoveRoomClicked:
-                m_RemoveAddRoom.button.transition = UnityEngine.UI.Selectable.Transition.None;
-                break;
-            case eSkill.ePlaceTrapClicked:
-                m_PlaceTrap.button.transition = UnityEngine.UI.Selectable.Transition.None;
-                break;
-            case eSkill.ePlaceDragonlingClicked:
-                m_PlaceDragonling.button.transition = UnityEngine.UI.Selectable.Transition.None;
-                break;
-            case eSkill.eEntombClicked:
-                m_Entomb.button.transition = UnityEngine.UI.Selectable.Transition.None;
-                break;
-            case eSkill.eFireBreathClicked:
-                m_FireBreath.button.transition = UnityEngine.UI.Selectable.Transition.None;
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void highlightSelectedSkill()
-    {
-        switch (SelectedSkill)
-        {
-            case eSkill.eAddRemoveRoomClicked:
-                m_RemoveAddRoom.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
-                break;
-            case eSkill.ePlaceTrapClicked:
-                m_PlaceTrap.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
-                break;
-            case eSkill.ePlaceDragonlingClicked:
-                m_PlaceDragonling.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
-                break;
-            case eSkill.eEntombClicked:
-                m_Entomb.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
-                break;
-            case eSkill.eFireBreathClicked:
-                m_FireBreath.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
-                break;
-            default:
-                break;
-        }
     }
 }
