@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 /// <summary>
 /// This entire script is done only locally to manage which objects each client can see.
 /// </summary>
-public class VisitableObject : MonoBehaviour
+public class VisitableObject : NetworkBehaviour
 {
     private Renderer m_Renderer;
 
@@ -25,6 +26,11 @@ public class VisitableObject : MonoBehaviour
     private void Start()
     {
         m_Renderer = GetComponent<Renderer>();
+
+        if (!isServer)
+        {
+            m_Renderer.enabled = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D i_Collider)
@@ -36,7 +42,16 @@ public class VisitableObject : MonoBehaviour
         }
         else
         {
-            i_Collider.GetComponent<Renderer>().enabled = false;
+            CharacterScript charScript = i_Collider.GetComponent<CharacterScript>();
+
+            if (charScript.isLocalPlayer)
+            {
+                m_Renderer.enabled = true;
+            }
+            else
+            {
+                i_Collider.GetComponent<Renderer>().enabled = false;
+            }
         }
     }
 }

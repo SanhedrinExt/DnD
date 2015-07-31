@@ -8,7 +8,7 @@ public class RoomNode  {
 
     public eColor m_eColor;
 
-    public GameObject refRoom; // to do
+    public RoomScript refRoom; // to do
 
     public bool m_activRoom;
     public List<RoomNode> m_niebringRooms;

@@ -3,7 +3,10 @@ using System.Collections;
 
 public class RoomScript : VisitableObject {
 
-    //private RoomNode roomGraphNode;
+    public RoomNode roomGraphNode;
+
+    [SerializeField]
+    private Vector2 m_RoomGridPosition;
 
 	// Use this for initialization
 	void Start () {
