@@ -9,7 +9,13 @@ public class Graph {
 
     private Graph() 
     {
-
+        for(int y = 0 ;y < c_y ;++y)
+        {
+            for(int x = 0;x < c_x;++x)
+            {
+                m_rooms[y, x] = new RoomNode(x ,y);
+            }
+        }
     }
 
     static private Graph s_singltonGraph;
@@ -29,6 +35,11 @@ public class Graph {
 
     public RoomNode[,] m_rooms = new RoomNode[c_y, c_x];
 
+    public void ConactRoomScripToRoomNode(Vector2 v2 ,RoomScript roomS)
+    {
+        m_rooms[(int)v2.y,(int)v2.x].refRoom = roomS;
+        roomS.roomGraphNode = m_rooms[(int)v2.y, (int)v2.x];
+    }
 
     public void RemovRoom(Vector2 i_roomVec)
     {

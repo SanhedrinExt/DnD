@@ -9,8 +9,17 @@ public class RoomScript : VisitableObject {
     private Vector2 m_RoomGridPosition;
 
 	// Use this for initialization
-	void Start () {
-	
+    sealed protected override void Start()
+    {        
+        Graph.GraphSingleton.ConactRoomScripToRoomNode(m_RoomGridPosition, this);
+
+        if (!m_Renderer.enabled)
+        {
+            m_Renderer.enabled = true;
+            gameObject.SetActive(false);
+        }
+
+        base.Start();
 	}
 	
 	// Update is called once per frame
