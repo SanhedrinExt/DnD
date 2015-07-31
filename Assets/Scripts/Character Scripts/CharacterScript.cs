@@ -7,9 +7,16 @@ public class CharacterScript : NetworkBehaviour {
     [SyncVar(hook="OnCharacterHit")]
     private int m_Health = 10;
 
+    private Renderer m_Renderer;
+
 	// Use this for initialization
 	void Start () {
-	
+        m_Renderer = GetComponent<Renderer>();
+
+        if (!isServer && !isLocalPlayer)
+        {
+            m_Renderer.enabled = false;
+        }
 	}
 	
 	// Update is called once per frame

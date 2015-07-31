@@ -5,6 +5,9 @@ public class RoomScript : VisitableObject {
 
     public RoomNode roomGraphNode;
 
+    [SerializeField]
+    private Vector2 m_RoomGridPosition;
+
 	// Use this for initialization
 	void Start () {
 	
