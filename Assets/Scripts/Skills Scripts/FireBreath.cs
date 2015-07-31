@@ -9,7 +9,7 @@ public class FireBreath : Skill
 
     public FireBreath() : base(k_Cooldown) { }
 
-    protected override void Activate()
+    protected override void Activate(Vector3 i_Position)
     {
         //TODO...
     }

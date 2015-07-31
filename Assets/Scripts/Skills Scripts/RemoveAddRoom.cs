@@ -12,7 +12,7 @@ public class RemoveAddRoom : StackableSkill
 
     public RemoveAddRoom() : base(k_Cooldown, k_MaxStacks) { }
 
-    protected sealed override void Activate()
+    protected sealed override void Activate(Vector3 i_Position)
     {
         // TODO... 
     }

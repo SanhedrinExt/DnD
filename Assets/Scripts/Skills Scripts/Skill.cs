@@ -11,7 +11,7 @@ namespace SkillProvider
         //time In milliseconds:
         private readonly int r_Cooldown;
         public int CooldownTimer { get; private set; }
-        private DateTime m_LastUse = new DateTime();
+        public DateTime LastUse { get ; private set; }
 
         protected bool m_Active = true;
 
@@ -27,7 +27,7 @@ namespace SkillProvider
 
         public virtual void Start()
         {
-            m_LastUse = DateTime.Now;
+            LastUse = DateTime.Now;
             CooldownTimer = r_Cooldown;
             m_ButtonCooldown = m_Button.transform.FindChild("Text Cooldown").GetComponent<Text>();
             button = m_Button.GetComponent<Button>();
@@ -38,7 +38,7 @@ namespace SkillProvider
             if (CooldownTimer > 0)
             {
                 Debug.Log("time update");
-                TimeSpan deltaTime = DateTime.Now - m_LastUse;
+                TimeSpan deltaTime = DateTime.Now - LastUse;
                 CooldownTimer = r_Cooldown - (int)deltaTime.TotalMilliseconds;
                 
                 m_ButtonCooldown.text = string.Format("{0}.{1}", CooldownTimer / 1000, (CooldownTimer % 1000)/100);
@@ -49,12 +49,12 @@ namespace SkillProvider
             }
         }
 
-        protected abstract void Activate();
-        public void UseSkill()
+        protected abstract void Activate(Vector3 i_Position);
+        public void UseSkill(Vector3 i_Position)
         {
             if (m_Active && CooldownTimer <= 0)
             {
-                Activate(); // injection
+                Activate(i_Position); // injection
                 StackableSkill stackable = this as StackableSkill;
                 if (stackable != null)
                 {
@@ -67,7 +67,7 @@ namespace SkillProvider
 
         private void ResetCooldwon()
         {
-            m_LastUse = DateTime.Now;
+            LastUse = DateTime.Now;
             CooldownTimer = r_Cooldown;
         }
     }

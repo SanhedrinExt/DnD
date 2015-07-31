@@ -9,7 +9,7 @@ public class Entomb : Skill
 
     public Entomb() : base(k_Cooldown) { }
 
-    protected override void Activate()
+    protected override void Activate(Vector3 i_Position)
     {
         //TODO...
     }

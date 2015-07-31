@@ -11,6 +11,8 @@ public class DragonScript : PlayerScript
     Entomb m_Entomb;
     public eSkill SelectedSkill { get; private set; }
 
+    private DateTime m_LastPick = DateTime.Now;
+
     public DragonScript()
     {
         SelectedSkill = 0;
@@ -24,9 +26,35 @@ public class DragonScript : PlayerScript
         m_FireBreath = GetComponent<FireBreath>();
         m_Entomb = GetComponent<Entomb>();
     }
-
+    
     public void Update()
     {
+        if (ControlsManager.TapActionRequested())
+	    {
+		    Vector3 tapVector = ControlsManager.GetTapActionPoint();
+            TimeSpan timeFromLastSkillPick = DateTime.Now - m_LastPick;
+
+            if (SelectedSkill != 0 && timeFromLastSkillPick.TotalMilliseconds >= 50)
+            {
+                switch (SelectedSkill)
+                {
+                    case eSkill.eAddRemoveRoomClicked:
+                        m_RemoveAddRoom.UseSkill(tapVector);
+                        break;
+                    case eSkill.ePlaceTrapClicked:
+                        m_PlaceTrap.UseSkill(tapVector);
+                        break;
+                    case eSkill.eEntombClicked:
+                        m_Entomb.UseSkill(tapVector);
+                        break;
+                    case eSkill.eFireBreathClicked:
+                        m_FireBreath.UseSkill(tapVector);
+                        break;
+                    default:
+                        break;
+                }
+            }
+	    }
     }
 
     public enum eSkill
@@ -45,26 +73,31 @@ public class DragonScript : PlayerScript
 
     public void OnRemoveAddRoom()
     {
+        m_LastPick = DateTime.Now;
         SelectedSkill = eSkill.eAddRemoveRoomClicked;
     }
 
     public void OnPlaceTrap()
     {
+        m_LastPick = DateTime.Now;
         SelectedSkill = eSkill.ePlaceTrapClicked;
     }
 
     public void OnPlaceDragonling()
     {
+        m_LastPick = DateTime.Now;
         SelectedSkill = eSkill.ePlaceDragonlingClicked;
     }
 
     public void OnEntomb()
     {
+        m_LastPick = DateTime.Now;
         SelectedSkill = eSkill.eEntombClicked;
     }
 
     public void OnFireBreath()
     {
+        m_LastPick = DateTime.Now;
         SelectedSkill = eSkill.eFireBreathClicked;
     }
 }
