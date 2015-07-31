@@ -92,7 +92,7 @@ public class Graph {
         }
         return solver;
     }
-    public void ConactMe(Vector2 S, Vector2 i_badRoom)
+    private void ConactMe(Vector2 S, Vector2 i_badRoom)
     {
         Queue<BfsNode> queue = new Queue<BfsNode>();
         List<Vector2> arcivs = new List<Vector2>();
@@ -136,7 +136,7 @@ private void ReconctingGrath(BfsNode i_goodStart)
     m_rooms[(int)son.mySpot.y, (int)son.mySpot.x].m_niebringRooms.Add(m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x]);
 }
 
-public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs)
+private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs)
 {
     List<BfsNode> nodss = new List<BfsNode>();
     int x = (int)i_node.mySpot.x; 
@@ -173,7 +173,7 @@ public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs
 
 
 
-    public void ResetColor()
+    private void ResetColor()
     {
         foreach(RoomNode room in m_rooms)
         {
@@ -181,7 +181,7 @@ public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs
         }
     }
 
-    public void Visit(RoomNode i_room)
+    private void Visit(RoomNode i_room)
     {
         i_room.m_eColor = eColor.Grey;
 
@@ -195,7 +195,7 @@ public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs
         i_room.m_eColor = eColor.Black;
     }
     
-    public void Dfs()
+    private void Dfs()
     {
         ResetColor();
         foreach(RoomNode room in m_rooms)
@@ -207,7 +207,7 @@ public List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs
         }
     }
 
-    public bool IsGrathConacted()
+    private bool IsGrathConacted()
     {
         bool res = true;
 
