@@ -28,7 +28,6 @@ public class DungeonLobbyNetworkManager : NetworkLobbyManager {
             player = Instantiate(clientPrefab, startPositions[Random.Range(0, startPositions.Count)].position, Quaternion.identity) as GameObject;
         }
 
-        NetworkServer.Spawn(player);
         //NetworkServer.DestroyPlayersForConnection(conn);
         //NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         NetworkServer.ReplacePlayerForConnection(conn, player, playerControllerId);
