@@ -1,23 +1,31 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PlayerScript : CharacterScript
-{
+public abstract class PlayerScript : CharacterScript {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    [SerializeField]
+    private float m_AttackRange;
 
-    [Command]
-    private void CmdMovementManagement(Vector2 i_MoveTo)
+    [SerializeField]
+    private int m_AttackPower;
+
+    [Server]
+    protected void CheckAttack(Vector3 i_TargetPosition)
     {
-        //TODO: Implement movement once rooms are available.
+        if (Vector3.Distance(i_TargetPosition, transform.position) <= m_AttackRange)
+        {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(i_TargetPosition, Vector3.zero, 1);
+
+            foreach (RaycastHit2D hit in hits)
+            {
+                CharacterScript charScript = hit.transform.GetComponent<CharacterScript>();
+                if (hit.transform != transform && charScript)
+                {
+                    charScript.CmdDamageCharacter(m_AttackPower);
+                    break;
+                }
+            }
+        }
     }
 }

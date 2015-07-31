@@ -33,7 +33,7 @@ public class CharacterScript : NetworkBehaviour {
     }
 
     [Command]
-    private void CmdCharacterHit(int i_Damage)
+    public void CmdDamageCharacter(int i_Damage)
     {
         m_Health -= i_Damage;
     }
