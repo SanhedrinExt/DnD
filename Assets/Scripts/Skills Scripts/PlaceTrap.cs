@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using SkillProvider;
 
+[AddComponentMenu("Skills/Place Trap")]
 public class PlaceTrap : StackableSkill
 {
     [SerializeField]

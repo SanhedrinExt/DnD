@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using SkillProvider;
 
+[AddComponentMenu("Skills/Place Dragonling")]
 public class PlaceDragonling : StackableSkill
 {
     [SerializeField]

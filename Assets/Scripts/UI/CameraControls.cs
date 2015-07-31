@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 
+[AddComponentMenu("UI/Camera Controller")]
 public class CameraControls : MonoBehaviour {
 
     private Vector3 m_StartPosition;

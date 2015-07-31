@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using SkillProvider;
 
+[AddComponentMenu("Skills/Entomb")]
 public class Entomb : Skill 
 {
     private const int k_Cooldown = 10000;

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
-public class CharacterScript : NetworkBehaviour {
+public abstract class CharacterScript : NetworkBehaviour {
 
     [SyncVar(hook="OnCharacterHit")]
     private int m_Health = 10;

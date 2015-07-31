@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Dungeon/Door Script")]
 public class DoorScript : VisitableObject {
 
     [SerializeField]

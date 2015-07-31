@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using SkillProvider;
 
+[AddComponentMenu("Skills/Add\\Remove Room")]
 public class RemoveAddRoom : StackableSkill
 {
     [SerializeField]

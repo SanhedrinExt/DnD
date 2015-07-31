@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 
+[AddComponentMenu("Characters/Dragon Script")]
 public class DragonScript : PlayerScript
 {
     RemoveAddRoom m_RemoveAddRoom;

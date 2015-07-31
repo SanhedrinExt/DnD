@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 /// <summary>
 /// This entire script is done only locally to manage which objects each client can see.
 /// </summary>
-public class VisitableObject : NetworkBehaviour
+public abstract class VisitableObject : NetworkBehaviour
 {
     protected Renderer m_Renderer;
 

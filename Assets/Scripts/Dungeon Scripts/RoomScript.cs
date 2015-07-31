@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+[AddComponentMenu("Dungeon/Room Script")]
 public class RoomScript : VisitableObject {
 
     public RoomNode roomGraphNode;

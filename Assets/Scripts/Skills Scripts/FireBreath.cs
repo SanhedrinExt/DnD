@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using SkillProvider;
 
+[AddComponentMenu("Skills/Fire Breath")]
 public class FireBreath : Skill
 {
     private const int k_Cooldown = 5000;

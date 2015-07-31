@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
+[AddComponentMenu("Network/Dungeon Lobby Network Manager")]
 public class DungeonLobbyNetworkManager : NetworkLobbyManager {
 
     [SerializeField]
