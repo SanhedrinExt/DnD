@@ -18,6 +18,13 @@ public class RoomScript : VisitableObject {
             m_Renderer.enabled = true;
             gameObject.SetActive(false);
         }
+        else
+        {
+            Graph.GraphSingleton.m_rooms[(int)m_RoomGridPosition.y,(int) m_RoomGridPosition.x].m_activRoom = true;
+        }
+        
+
+     
 
         base.Start();
 	}

@@ -5,7 +5,7 @@ using SkillProvider;
 
 public class Entomb : Skill 
 {
-    private const int k_Cooldown = 10;
+    private const int k_Cooldown = 10000;
 
     public Entomb() : base(k_Cooldown) { }
 

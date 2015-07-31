@@ -18,9 +18,10 @@ public class AdventurerScript : PlayerScript
 #if UNITY_EDITOR || UNITY_STANDALONE
         if (isLocalPlayer)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (ControlsManager.TapActionRequested())
             {
-
+                Vector3 moveTo = ControlsManager.GetTapActionPoint();
+                CmdMovementManagement(moveTo);
             }
         }
 #elif UNITY_ANDROID || UNITY_IOS
@@ -41,6 +42,10 @@ public class AdventurerScript : PlayerScript
             }
         }
 #endif
+	    if(Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            CmdMovementManagement(new Vector3(0.19f, -1.64f, 0f));
+        }
 	}
 
     [Command]

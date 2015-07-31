@@ -8,7 +8,7 @@ public class CameraControls : MonoBehaviour {
     private float m_StartDistance;
     private float m_LastDistance;
 
-    private static bool s_InMovement = false;
+    public static bool s_InMovement = false;
 
     public bool InMovement { get { return s_InMovement; } }
 
