@@ -72,7 +72,7 @@ public class Graph {
         queue.Enqueue(new BfsNode(i_start.myPosition, null, 0));
         BfsNode solver = null;
 
-        while (solver == null || queue.Count == 0)
+        while (solver == null && queue.Count != 0)
         {
             BfsNode node = queue.Dequeue();
             if (m_rooms[(int)node.mySpot.y, (int)node.mySpot.x].m_niebringRooms == null) continue;
@@ -236,7 +236,7 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
         RoomNode endR = convertV3toRoomNode(i_end);
 
         
-        if (startR != null && endR != null && isRoomReachbol(endR) != true)
+        if (startR != null && endR != null && isRoomReachbol(endR) == true)
         {
             if (startR != endR)
             {

@@ -64,6 +64,7 @@ public class AdventurerScript : PlayerScript
     [Command]
     private void CmdMovementManagement(Vector3 i_MoveTo)
     {
+        Debug.Log("Command");
         Stack<Vector3> roomPathToTarget = Graph.GraphSingleton.GetVectorPath(transform.position, i_MoveTo);
         StopAllCoroutines();
         StartCoroutine(MovePlayerAlongRoute(roomPathToTarget));
