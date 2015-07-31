@@ -10,7 +10,7 @@ public class RoomScript : VisitableObject {
 
 	// Use this for initialization
     sealed protected override void Start()
-    {        
+    {
         Graph.GraphSingleton.ConactRoomScripToRoomNode(m_RoomGridPosition, this);
 
         if (!m_Renderer.enabled)

@@ -9,19 +9,8 @@ public class DungeonLobbyNetworkManager : NetworkLobbyManager {
     [SerializeField]
     private GameObject serverPrefab;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
     {
-        Debug.Log("Create lobby player");
         return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
     }
 
@@ -31,13 +20,17 @@ public class DungeonLobbyNetworkManager : NetworkLobbyManager {
         
         if (conn.connectionId == conn.hostId)
         {
+            Debug.Log("Dragon connected");
             player = Instantiate(serverPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         }
         else
         {
+            Debug.Log("Adventurer connected");
             player = Instantiate(clientPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         }
 
+        //NetworkServer.DestroyPlayersForConnection(conn);
+        //NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         NetworkServer.ReplacePlayerForConnection(conn, player, playerControllerId);
 
         return player;
