@@ -20,7 +20,7 @@ public abstract class CharacterScript : NetworkBehaviour {
         m_Renderer = GetComponent<Renderer>();
 
         m_NameTag = transform.FindChild("NameTag");
-        m_NameTag = transform.FindChild("HealthBar");
+        m_HealthBar = transform.FindChild("HealthBar");
         m_NameTagSpace = GameObject.Find("Name Space").transform;
         transform.SetParent(m_NameTagSpace);
 
@@ -47,10 +47,16 @@ public abstract class CharacterScript : NetworkBehaviour {
 
 	// Update is called once per frame
 	protected virtual void Update () {
-        if (isLocalPlayer && m_NameTag)
+        if (isLocalPlayer)
         {
-            m_NameTag.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2);
-            m_HealthBar.transform.position = transform.position - Vector3.up * (transform.localScale.y / 2);
+            if (m_NameTag)
+            {
+                m_NameTag.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2);
+            }
+            if (m_HealthBar)
+            {
+                m_HealthBar.transform.position = transform.position - Vector3.up * (transform.localScale.y / 2);
+            }
         }
 
         if (isServer || isLocalPlayer)
@@ -59,11 +65,6 @@ public abstract class CharacterScript : NetworkBehaviour {
         }
 
         m_NameTag.gameObject.SetActive(m_Renderer.enabled);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CmdDamageCharacter(1);
-        }
 	}
 
     /// <summary>
@@ -73,7 +74,7 @@ public abstract class CharacterScript : NetworkBehaviour {
     [Client]
     private void OnCharacterHit(int i_NewHealth)
     {
-        m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = false;
+        m_HealthBar.FindChild(string.Format("{0}Health", m_Health+1)).GetComponent<RawImage>().enabled = false;
 
         m_Health = i_NewHealth < 0 ? m_Health = 0 : i_NewHealth;
 
