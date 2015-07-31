@@ -21,15 +21,14 @@ public class DungeonLobbyNetworkManager : NetworkLobbyManager {
         
         if (conn.connectionId == conn.hostId)
         {
-            Debug.Log("Dragon connected");
-            player = Instantiate(serverPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            player = Instantiate(serverPrefab, startPositions[Random.Range(0, startPositions.Count)].position, Quaternion.identity) as GameObject;
         }
         else
         {
-            Debug.Log("Adventurer connected");
-            player = Instantiate(clientPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            player = Instantiate(clientPrefab, startPositions[Random.Range(0, startPositions.Count)].position, Quaternion.identity) as GameObject;
         }
 
+        NetworkServer.Spawn(player);
         //NetworkServer.DestroyPlayersForConnection(conn);
         //NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         NetworkServer.ReplacePlayerForConnection(conn, player, playerControllerId);

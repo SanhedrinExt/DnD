@@ -47,13 +47,6 @@ public class AdventurerScript : PlayerScript
         }
 
 	    base.Update();
-	    if(Input.GetKeyDown(KeyCode.Space) == true)
-        {
-            if (!m_IsStunned)
-            {
-                CmdMovementManagement(new Vector3(0.19f, -1.64f, 0f));
-            }
-        }
 	}
 
     private void handleStun()

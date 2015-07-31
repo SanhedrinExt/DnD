@@ -25,6 +25,11 @@ public abstract class CharacterScript : NetworkBehaviour {
         {
             m_Renderer.enabled = false;
         }
+        else
+        {
+            Debug.Log(isServer + " " + isLocalPlayer);
+            m_Renderer.enabled = true;
+        }
 
         foreach (RaycastHit2D hit in Physics2D.RaycastAll(transform.position, Vector3.zero, 1))
         {
@@ -37,13 +42,15 @@ public abstract class CharacterScript : NetworkBehaviour {
             }
         }
 	}
-	
+
 	// Update is called once per frame
 	protected virtual void Update () {
         if (isLocalPlayer && m_NameTag)
         {
             m_NameTag.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2);
         }
+
+        m_NameTag.gameObject.SetActive(m_Renderer.enabled);
 	}
 
     /// <summary>

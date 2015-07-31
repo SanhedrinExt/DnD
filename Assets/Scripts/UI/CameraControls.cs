@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
+using Random = UnityEngine.Random;
 
 
 [AddComponentMenu("UI/Camera Controller")]
@@ -27,7 +29,7 @@ public class CameraControls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-      
+        Random.seed = DateTime.Now.Millisecond * DateTime.Now.Millisecond / DateTime.Now.Second;
 	}
 
 	
