@@ -56,6 +56,7 @@ public class DragonScript : PlayerScript
                     default:
                         break;
                 }
+                SelectedSkill = 0;
             }
 	    }
 
