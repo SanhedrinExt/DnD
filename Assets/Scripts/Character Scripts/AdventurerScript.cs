@@ -21,13 +21,13 @@ public class AdventurerScript : PlayerScript
     [Command]
     private void CmdMovementManagement(Vector3 i_MoveTo)
     {
-        Queue<Vector3> roomPathToTarget = null; //RoomGraph.GetVectorPath(transform.position, i_MoveTo);
+        Stack<Vector3> roomPathToTarget = Graph.GraphSingleton.GetVectorPath(transform.position, i_MoveTo);
         StopCoroutine("MovePlayerAlongRoute");
         StartCoroutine(MovePlayerAlongRoute(roomPathToTarget));
     }
 
     [Server]
-    private IEnumerator MovePlayerAlongRoute(Queue<Vector3> i_RoomPath)
+    private IEnumerator MovePlayerAlongRoute(Stack<Vector3> i_RoomPath)
     {
         while (i_RoomPath.Count > 0)
         {
@@ -35,7 +35,7 @@ public class AdventurerScript : PlayerScript
 
             if (Vector3.Distance(transform.position, i_RoomPath.Peek()) < 0.1f)
             {
-                i_RoomPath.Dequeue();
+                i_RoomPath.Pop();
             }
 
             yield return null;

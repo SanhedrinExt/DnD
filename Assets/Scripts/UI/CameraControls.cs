@@ -30,19 +30,8 @@ public class CameraControls : MonoBehaviour {
 	void Update () {
         checkMoveCamera();
         checkZoomCamera();
-        checkRotisonCamera();
     }
 
-    private void checkRotisonCamera()
-    {
-
-            if(Input.touchCount > 1 )
-            {
-
-            }
-        
-
-    }
 
     private void checkZoomCamera()
     {

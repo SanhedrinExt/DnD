@@ -223,31 +223,30 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
         return res;
     }
 
-    public Stack<Vector2> GetVectorPath(Vector3 i_strt, Vector3 i_end)
+    public Stack<Vector3> GetVectorPath(Vector3 i_strt, Vector3 i_end)
     {
-        Stack<Vector2> moveQ = null;
+        Stack<Vector3> moveQ = null;
         RoomNode startR = convertV3toRoomNode(i_strt);
         RoomNode endR = convertV3toRoomNode(i_end);
         
         if(startR != endR)
         {
             BfsNode bfsNode = findSortPath(startR, endR);
-            moveQ = getV2PathFromBfsNode( bfsNode);
+            moveQ = getV3PathFromBfsNode( bfsNode);
         }
         return moveQ;
     }
 
-    private Stack<Vector2> getV2PathFromBfsNode(BfsNode i_bfsNode)
+    private Stack<Vector3> getV3PathFromBfsNode(BfsNode i_bfsNode)
     {
-        Stack<Vector2> stack = new Stack<Vector2>();
+        Stack<Vector3> stack = new Stack<Vector3>();
         BfsNode bfsNode = i_bfsNode;
 
-        do
+        while (bfsNode != null)
         {
-            Vector3 v3 = m_rooms[(int)bfsNode.mySpot.y, (int)bfsNode.mySpot.x].refRoom.transform.position;
-            stack.Push(new Vector2(v3.x, v3.y));
+            stack.Push( m_rooms[(int)bfsNode.mySpot.y, (int)bfsNode.mySpot.x].refRoom.transform.position);           
             bfsNode = bfsNode.perent;
-        } while (bfsNode != null);
+        } 
 
         return stack;
     }
