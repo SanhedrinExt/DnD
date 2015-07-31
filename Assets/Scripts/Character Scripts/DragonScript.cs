@@ -10,16 +10,16 @@ public class DragonScript : PlayerScript
     FireBreath m_FireBreath;
     Entomb m_Entomb;
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
+        Debug.Log("hello world");
         m_RemoveAddRoom = GetComponent<RemoveAddRoom>();
         m_PlaceTrap = GetComponent<PlaceTrap>();
     }
 
-    public override void Update()
+    public void Update()
     {
-        base.Update();
+        
     }
 
     enum eSkill
