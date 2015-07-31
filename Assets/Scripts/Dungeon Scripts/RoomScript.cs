@@ -33,4 +33,9 @@ public class RoomScript : VisitableObject {
     {
         base.Update();
 	}
+    public void showRoom()
+    {
+        
+       // this.transform.position
+    }
 }

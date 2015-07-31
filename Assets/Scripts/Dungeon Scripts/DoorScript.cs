@@ -31,4 +31,5 @@ public class DoorScript : VisitableObject {
         //Otherwise, disable it.
         base.Update();
 	}
+    
 }
