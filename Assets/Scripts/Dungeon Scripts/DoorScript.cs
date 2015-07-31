@@ -11,8 +11,17 @@ public class DoorScript : VisitableObject {
 
     protected override void Start()
     {
+        if (!m_Renderer.enabled)
+        {
+            m_Renderer.enabled = true;
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Graph.GraphSingleton.ConactingRooms(m_Room1GridPosition, m_Room2GridPosition);
+        }
+
         base.Start();
-        Graph.GraphSingleton.ConactingRooms(m_Room1GridPosition, m_Room2GridPosition);
     }
 
 	// Update is called once per frame

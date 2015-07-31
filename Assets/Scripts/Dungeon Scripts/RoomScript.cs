@@ -22,9 +22,6 @@ public class RoomScript : VisitableObject {
         {
             Graph.GraphSingleton.m_rooms[(int)m_RoomGridPosition.y,(int) m_RoomGridPosition.x].m_activRoom = true;
         }
-        
-
-     
 
         base.Start();
 	}
