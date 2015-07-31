@@ -15,7 +15,32 @@ public class AdventurerScript : PlayerScript
 	
 	// Update is called once per frame
 	void Update () {
-	
+#if UNITY_EDITOR || UNITY_STANDALONE
+        if (isLocalPlayer)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+
+            }
+        }
+#elif UNITY_ANDROID || UNITY_IOS
+        if(Input.touchCount > 1){
+            if (Input.GetTouch(1).phase == TouchPhase.Began)
+            {
+                m_LastDistance = m_StartDistance = Vector3.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
+            }
+            else if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+               float distance = Vector3.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
+               if(Mathf.Abs(distance - m_LastDistance) >= m_MinDistance / 10){
+                   float zoom = Mathf.Sign(distance - m_LastDistance) * m_ZoomSpeed;
+                   m_LastDistance = distance;
+
+                   zoomCamera(zoom);
+               }
+            }
+        }
+#endif
 	}
 
     [Command]

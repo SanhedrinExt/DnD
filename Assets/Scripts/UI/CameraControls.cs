@@ -8,6 +8,10 @@ public class CameraControls : MonoBehaviour {
     private float m_StartDistance;
     private float m_LastDistance;
 
+    private static bool s_InMovement = false;
+
+    public bool InMovement { get { return s_InMovement; } }
+
     [SerializeField]
     private float m_CameraVelocity;
 
@@ -71,6 +75,10 @@ public class CameraControls : MonoBehaviour {
         {
             moveCamera(Input.mousePosition);
         }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            s_InMovement = false;
+        }
 
 #elif UNITY_ANDROID || UNITY_IOS
         if(Input.touchCount == 1){
@@ -91,6 +99,7 @@ public class CameraControls : MonoBehaviour {
         if (Vector3.Distance(m_StartPosition, i_EndPosition) >= m_MinDistance)
         {
             transform.position -= (m_StartPosition - i_EndPosition).normalized * m_CameraVelocity;
+            s_InMovement = true;
         }
     }
 
