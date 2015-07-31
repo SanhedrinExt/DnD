@@ -72,11 +72,13 @@ public class Graph {
         queue.Enqueue(new BfsNode(i_start.myPosition, null, 0));
         BfsNode solver = null;
 
-        while (solver == null)
+        while (solver == null || queue.Count == 0)
         {
             BfsNode node = queue.Dequeue();
+            if (m_rooms[(int)node.mySpot.y, (int)node.mySpot.x].m_niebringRooms == null) continue;
             foreach (RoomNode room in m_rooms[(int)node.mySpot.y, (int)node.mySpot.x].m_niebringRooms)
             {
+                if (isRoomVisabol(room) != true) continue;
                 BfsNode bfsNode = new BfsNode(room.myPosition, node, node.depth + 1);
                 if (room == i_end)
                 {
@@ -107,7 +109,7 @@ public class Graph {
             List<BfsNode> naeibers = getGoodNaeibersForBfs(node, arcivs);
             foreach(BfsNode naeiber in naeibers)
             {
-                if(m_rooms[(int)naeiber.mySpot.y,(int)naeiber.mySpot.x].m_activRoom == true && m_rooms[(int)naeiber.mySpot.y,(int)naeiber.mySpot.x].m_eColor == eColor.Black)
+                if (m_rooms[(int)naeiber.mySpot.y, (int)naeiber.mySpot.x].m_niebringRooms != null && m_rooms[(int)naeiber.mySpot.y, (int)naeiber.mySpot.x].m_activRoom == true && m_rooms[(int)naeiber.mySpot.y, (int)naeiber.mySpot.x].m_eColor == eColor.Black)
                 {
                     solver = naeiber;
                     break;
@@ -184,12 +186,14 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
     private void Visit(RoomNode i_room)
     {
         i_room.m_eColor = eColor.Grey;
-
-        foreach(RoomNode room in i_room.m_niebringRooms)
+        if (i_room.m_niebringRooms != null)
         {
-            if(room.m_eColor == eColor.White)
+            foreach (RoomNode room in i_room.m_niebringRooms)
             {
-                Visit(room);
+                if (room.m_eColor == eColor.White)
+                {
+                    Visit(room);
+                }
             }
         }
         i_room.m_eColor = eColor.Black;
@@ -225,11 +229,14 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
 
     public Stack<Vector3> GetVectorPath(Vector3 i_strt, Vector3 i_end)
     {
+        if (IsGrathConacted() == false)
+            Debug.LogError("grath is not conacted");
         Stack<Vector3> moveQ = null;
         RoomNode startR = convertV3toRoomNode(i_strt);
         RoomNode endR = convertV3toRoomNode(i_end);
 
-        if (startR != null && endR != null)
+        
+        if (startR != null && endR != null && isRoomReachbol(endR) != true)
         {
             if (startR != endR)
             {
@@ -250,18 +257,41 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
         return moveQ;
     }
 
+    private bool isRoomVisabol(RoomNode i_room)
+    {
+        return i_room.refRoom.GetComponent<Renderer>().enabled;
+    }
+
+    private bool isRoomReachbol(RoomNode i_room)
+    {
+        bool res = false;
+
+        foreach( RoomNode room in i_room.m_niebringRooms)
+        {
+            if(isRoomVisabol(room) == true )
+            {
+                res = true;
+                break;
+            }
+        }
+        return res;
+    }
+
     private Stack<Vector3> getV3PathFromBfsNode(Vector3 i_Target, BfsNode i_bfsNode)
     {
         Stack<Vector3> stack = new Stack<Vector3>();
-        BfsNode bfsNode = i_bfsNode;
-
-        stack.Push(i_Target);
-
-        while (bfsNode != null)
+        if (i_bfsNode != null)
         {
-            stack.Push( m_rooms[(int)bfsNode.mySpot.y, (int)bfsNode.mySpot.x].refRoom.transform.position);           
-            bfsNode = bfsNode.perent;
-        } 
+            BfsNode bfsNode = i_bfsNode;
+
+            stack.Push(i_Target);
+
+            while (bfsNode != null)
+            {
+                stack.Push(m_rooms[(int)bfsNode.mySpot.y, (int)bfsNode.mySpot.x].refRoom.transform.position);
+                bfsNode = bfsNode.perent;
+            }
+        }
 
         return stack;
     }
