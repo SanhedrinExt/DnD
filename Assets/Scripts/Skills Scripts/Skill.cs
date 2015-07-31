@@ -18,6 +18,7 @@ namespace SkillProvider
         [SerializeField]
         protected GameObject m_Button;
         protected Text m_ButtonCooldown;
+        public Button button { get; set; }
 
         public Skill(int i_Cooldown)
         {
@@ -26,10 +27,10 @@ namespace SkillProvider
 
         public virtual void Start()
         {
-            Debug.Log("base Skill");
             m_LastUse = DateTime.Now;
             CooldownTimer = r_Cooldown;
             m_ButtonCooldown = m_Button.transform.FindChild("Text Cooldown").GetComponent<Text>();
+            button = m_Button.GetComponent<Button>();
         }
 
         public virtual void Update()
@@ -85,7 +86,6 @@ namespace SkillProvider
 
         public override void Start()
         {
-            Debug.Log("stackable Skill");
             base.Start();
             CurrStacks = r_MaxStacks;
             m_ButtonStacks = m_Button.transform.FindChild("Text Stacks").GetComponent<Text>();

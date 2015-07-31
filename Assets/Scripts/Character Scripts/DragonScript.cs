@@ -9,20 +9,23 @@ public class DragonScript : PlayerScript
     PlaceDragonling m_PlaceDragonling;
     FireBreath m_FireBreath;
     Entomb m_Entomb;
+    public eSkill SelectedSkill { get; private set; }
+
+    public DragonScript()
+    {
+        SelectedSkill = 0;
+    }
 
     public void Start()
     {
-        Debug.Log("hello world");
         m_RemoveAddRoom = GetComponent<RemoveAddRoom>();
         m_PlaceTrap = GetComponent<PlaceTrap>();
+        m_PlaceDragonling = GetComponent<PlaceDragonling>();
+        m_FireBreath = GetComponent<FireBreath>();
+        m_Entomb = GetComponent<Entomb>();
     }
 
-    public void Update()
-    {
-        
-    }
-
-    enum eSkill
+    public enum eSkill
     {
         eAddRemoveRoomClicked,
         ePlaceTrapClicked,
@@ -31,35 +34,81 @@ public class DragonScript : PlayerScript
         eFireBreathClicked
     }
 
-    private eSkill m_SelectedSkill = 0;
-
     private void disableAllFlags()
     {
-        m_SelectedSkill = 0;   
+        SelectedSkill = 0;   
     }
 
     public void OnRemoveAddRoom()
     {
-        m_SelectedSkill = eSkill.eAddRemoveRoomClicked;
+        SelectedSkill = eSkill.eAddRemoveRoomClicked;
     }
 
     public void OnPlaceTrap()
     {
-        m_SelectedSkill = eSkill.ePlaceTrapClicked;
+        SelectedSkill = eSkill.ePlaceTrapClicked;
     }
 
     public void OnPlaceDragonling()
     {
-        m_SelectedSkill = eSkill.ePlaceDragonlingClicked;
+        SelectedSkill = eSkill.ePlaceDragonlingClicked;
     }
 
     public void OnEntomb()
     {
-        m_SelectedSkill = eSkill.eEntombClicked;
+        SelectedSkill = eSkill.eEntombClicked;
     }
 
     public void OnFireBreath()
     {
-        m_SelectedSkill = eSkill.eFireBreathClicked;
+        SelectedSkill = eSkill.eFireBreathClicked;
+    }
+
+    private void dwonlightSelectedSkill()
+    {
+        switch (SelectedSkill)
+        {
+            case eSkill.eAddRemoveRoomClicked:
+                m_RemoveAddRoom.button.transition = UnityEngine.UI.Selectable.Transition.None;
+                break;
+            case eSkill.ePlaceTrapClicked:
+                m_PlaceTrap.button.transition = UnityEngine.UI.Selectable.Transition.None;
+                break;
+            case eSkill.ePlaceDragonlingClicked:
+                m_PlaceDragonling.button.transition = UnityEngine.UI.Selectable.Transition.None;
+                break;
+            case eSkill.eEntombClicked:
+                m_Entomb.button.transition = UnityEngine.UI.Selectable.Transition.None;
+                break;
+            case eSkill.eFireBreathClicked:
+                m_FireBreath.button.transition = UnityEngine.UI.Selectable.Transition.None;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void highlightSelectedSkill()
+    {
+        switch (SelectedSkill)
+        {
+            case eSkill.eAddRemoveRoomClicked:
+                m_RemoveAddRoom.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
+                break;
+            case eSkill.ePlaceTrapClicked:
+                m_PlaceTrap.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
+                break;
+            case eSkill.ePlaceDragonlingClicked:
+                m_PlaceDragonling.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
+                break;
+            case eSkill.eEntombClicked:
+                m_Entomb.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
+                break;
+            case eSkill.eFireBreathClicked:
+                m_FireBreath.button.transition = UnityEngine.UI.Selectable.Transition.ColorTint;
+                break;
+            default:
+                break;
+        }
     }
 }

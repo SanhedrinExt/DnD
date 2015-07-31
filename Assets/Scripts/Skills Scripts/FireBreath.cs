@@ -5,7 +5,7 @@ using SkillProvider;
 
 public class FireBreath : Skill
 {
-    private const int k_Cooldown = 5;
+    private const int k_Cooldown = 5000;
 
     public FireBreath() : base(k_Cooldown) { }
 
