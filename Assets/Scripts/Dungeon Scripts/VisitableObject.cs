@@ -40,7 +40,7 @@ public class VisitableObject : NetworkBehaviour
     {
     }
 
-    void OnTriggerEnter2D(Collider2D i_Collider)
+    public void OnTriggerEnter2D(Collider2D i_Collider)
     {
         //When a player enters a visible room, make the player visible and otherwise.
         if (m_HasBeenVisited)

@@ -5,10 +5,20 @@ using UnityEngine.Networking;
 public abstract class PlayerScript : CharacterScript {
 
     [SerializeField]
-    private float m_AttackRange;
+    private float m_AttackRange = 1;
 
     [SerializeField]
-    private int m_AttackPower;
+    private int m_AttackPower = 1;
+
+    protected override void Start()
+    {
+        base.Start();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
 
     [Server]
     protected void CheckAttack(Vector3 i_TargetPosition)

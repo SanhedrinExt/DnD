@@ -30,7 +30,8 @@ public class RoomScript : VisitableObject {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+    sealed protected override void Update()
+    {
+        base.Update();
 	}
 }

@@ -9,12 +9,12 @@ public class AdventurerScript : PlayerScript
     private float m_MoveSpeed = 10;
 
 	// Use this for initialization
-	void Start () {
-	
+	protected override void Start () {
+        base.Start();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	protected override void Update () {
         if (isLocalPlayer)
         {
             if (ControlsManager.TapActionRequested())
@@ -24,17 +24,14 @@ public class AdventurerScript : PlayerScript
             }
         }
 
-	    if(Input.GetKeyDown(KeyCode.Space) == true)
-        {
-            CmdMovementManagement(new Vector3(0.19f, -1.64f, 0f));
-        }
+	    base.Update();
 	}
 
     [Command]
     private void CmdMovementManagement(Vector3 i_MoveTo)
     {
         Stack<Vector3> roomPathToTarget = Graph.GraphSingleton.GetVectorPath(transform.position, i_MoveTo);
-        StopCoroutine("MovePlayerAlongRoute");
+        StopAllCoroutines();
         StartCoroutine(MovePlayerAlongRoute(roomPathToTarget));
     }
 
@@ -43,7 +40,8 @@ public class AdventurerScript : PlayerScript
     {
         while (i_RoomPath.Count > 0)
         {
-            transform.position += (transform.position - i_RoomPath.Peek()).normalized * (Time.deltaTime * m_MoveSpeed);
+            Vector3 moveDir = (i_RoomPath.Peek() - transform.position).normalized;
+            transform.position += moveDir * (Time.deltaTime * m_MoveSpeed);
 
             if (Vector3.Distance(transform.position, i_RoomPath.Peek()) < 0.1f)
             {

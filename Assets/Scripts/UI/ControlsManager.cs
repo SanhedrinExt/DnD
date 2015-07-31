@@ -20,12 +20,16 @@ public static class ControlsManager
 
     public static Vector3 GetTapActionPoint()
     {
+        Vector3 target;
+
 #if UNITY_EDITOR || UNITY_STANDALONE
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
 #elif UNITY_ANDROID || UNITY_IOS
-        return Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+        target = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 #endif
+        target.z = 0;
+        return target;
     }
 }
 

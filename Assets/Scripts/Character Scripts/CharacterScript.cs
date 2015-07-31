@@ -9,19 +9,41 @@ public class CharacterScript : NetworkBehaviour {
 
     private Renderer m_Renderer;
 
+    private Transform m_NameTagSpace;
+    private Transform m_NameTag;
+
 	// Use this for initialization
-	void Start () {
+	protected virtual void Start () {
         m_Renderer = GetComponent<Renderer>();
+
+        m_NameTag = transform.FindChild("NameTag");
+        m_NameTagSpace = GameObject.Find("Name Space").transform;
+        transform.SetParent(m_NameTagSpace);
+
 
         if (!isServer && !isLocalPlayer)
         {
             m_Renderer.enabled = false;
         }
+
+        foreach (RaycastHit2D hit in Physics2D.RaycastAll(transform.position, Vector3.zero, 1))
+        {
+            VisitableObject room = hit.collider.transform.GetComponent<VisitableObject>();
+
+            if (room)
+            {
+                room.OnTriggerEnter2D(GetComponent<Collider2D>());
+                break;
+            }
+        }
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	protected virtual void Update () {
+        if (isLocalPlayer && m_NameTag)
+        {
+            m_NameTag.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2);
+        }
 	}
 
     /// <summary>

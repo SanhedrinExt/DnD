@@ -228,19 +228,34 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
         Stack<Vector3> moveQ = null;
         RoomNode startR = convertV3toRoomNode(i_strt);
         RoomNode endR = convertV3toRoomNode(i_end);
-        
-        if(startR != endR)
+
+        if (startR != null && endR != null)
         {
-            BfsNode bfsNode = findSortPath(startR, endR);
-            moveQ = getV3PathFromBfsNode( bfsNode);
+            if (startR != endR)
+            {
+                BfsNode bfsNode = findSortPath(startR, endR);
+                moveQ = getV3PathFromBfsNode(i_end, bfsNode);
+            }
+            else
+            {
+                moveQ = new Stack<Vector3>();
+                moveQ.Push(i_end);
+            }
         }
+        else
+        {
+            moveQ = new Stack<Vector3>();
+        }
+
         return moveQ;
     }
 
-    private Stack<Vector3> getV3PathFromBfsNode(BfsNode i_bfsNode)
+    private Stack<Vector3> getV3PathFromBfsNode(Vector3 i_Target, BfsNode i_bfsNode)
     {
         Stack<Vector3> stack = new Stack<Vector3>();
         BfsNode bfsNode = i_bfsNode;
+
+        stack.Push(i_Target);
 
         while (bfsNode != null)
         {
