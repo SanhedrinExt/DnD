@@ -7,7 +7,7 @@ using SkillProvider;
 public class PlaceTrap : StackableSkill
 {
     [SerializeField]
-    private const int k_Cooldown = 15000;
+    private const int k_Cooldown = 3000;
     [SerializeField]
     private const int k_MaxStacks = 4;
 

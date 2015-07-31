@@ -14,7 +14,7 @@ namespace SkillProvider
         public DateTime LastUse { get ; private set; }
 
         protected bool m_Active = true;
-
+         
         [SerializeField]
         protected GameObject m_Button;
         protected Text m_ButtonCooldown;

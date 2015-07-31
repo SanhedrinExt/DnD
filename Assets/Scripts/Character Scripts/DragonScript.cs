@@ -60,11 +60,11 @@ public class DragonScript : PlayerScript
 
     public enum eSkill
     {
-        eAddRemoveRoomClicked,
-        ePlaceTrapClicked,
-        ePlaceDragonlingClicked,
-        eEntombClicked,
-        eFireBreathClicked
+        eAddRemoveRoomClicked = 1,
+        ePlaceTrapClicked = 2,
+        ePlaceDragonlingClicked = 3,
+        eEntombClicked = 4,
+        eFireBreathClicked = 5
     }
 
     private void disableAllFlags()
