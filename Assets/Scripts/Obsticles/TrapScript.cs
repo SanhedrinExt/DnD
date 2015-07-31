@@ -20,5 +20,6 @@ public class TrapScript : MonoBehaviour {
     {
         AdventurerScript AdventurerInTrap =  i_CollisionInfo.gameObject.GetComponent<AdventurerScript>();
         AdventurerInTrap.CmdStunAdventurer(k_TimeToStun);
+        Destroy(this);
     }
 }
