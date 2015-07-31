@@ -20,7 +20,7 @@ public class CameraControls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         //Input.mousePosition
         if (Input.GetMouseButtonDown(0))
         {
