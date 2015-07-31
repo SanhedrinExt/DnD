@@ -6,7 +6,7 @@ using System;
 
 namespace SkillProvider
 {
-    public abstract class Skill : MonoBehaviour
+    public abstract class Skill : NetworkBehaviour
     {
         //time In milliseconds:
         private readonly int r_Cooldown;
@@ -26,6 +26,7 @@ namespace SkillProvider
 
         public virtual void Start()
         {
+            Debug.Log("base Skill");
             m_LastUse = DateTime.Now;
             CooldownTimer = r_Cooldown;
             m_ButtonCooldown = m_Button.transform.FindChild("Text Cooldown").GetComponent<Text>();
@@ -36,12 +37,11 @@ namespace SkillProvider
             if (CooldownTimer > 0)
             {
                 Debug.Log("time update");
-                TimeSpan deltaTime = DateTime.Now.Subtract(m_LastUse);
-                CooldownTimer = r_Cooldown - deltaTime.Milliseconds;
-                //CooldownTimer -= deltaTime.Milliseconds;
-
-                m_ButtonCooldown.text = string.Format("{0}", CooldownTimer / 1000);
-                if (CooldownTimer <= 0 && m_Active)
+                TimeSpan deltaTime = DateTime.Now - m_LastUse;
+                CooldownTimer = r_Cooldown - (int)deltaTime.TotalMilliseconds;
+                
+                m_ButtonCooldown.text = string.Format("{0}.{1}", CooldownTimer / 1000, (CooldownTimer % 1000)/100);
+                if (CooldownTimer <= 0)
                 {
                     m_ButtonCooldown.text = "";
                 }
@@ -85,6 +85,7 @@ namespace SkillProvider
 
         public override void Start()
         {
+            Debug.Log("stackable Skill");
             base.Start();
             CurrStacks = r_MaxStacks;
             m_ButtonStacks = m_Button.transform.FindChild("Text Stacks").GetComponent<Text>();
@@ -101,7 +102,7 @@ namespace SkillProvider
             if (CurrStacks != 0)
             {
                 CurrStacks--;
-                m_ButtonStacks.text = m_ButtonStacks.ToString();
+                m_ButtonStacks.text = CurrStacks.ToString();
                 if (CurrStacks == 0)
                 {
                     m_Active = false;

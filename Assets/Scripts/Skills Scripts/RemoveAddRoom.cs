@@ -6,7 +6,7 @@ using SkillProvider;
 public class RemoveAddRoom : StackableSkill
 {
     [SerializeField]
-    private const int k_Cooldown = 20000;
+    private const int k_Cooldown = 3000;
     [SerializeField]
     private const int k_MaxStacks = 4;
 

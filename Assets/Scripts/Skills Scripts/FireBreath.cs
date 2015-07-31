@@ -13,10 +13,13 @@ public class FireBreath : Skill
     {
         //TODO...
     }
-
-    // Use this for initialization
-    void Start()
+    public override void Start()
     {
+        base.Start();
+    }
 
+    public override void Update()
+    {
+        base.Update();
     }
 }
