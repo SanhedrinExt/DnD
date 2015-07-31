@@ -22,7 +22,7 @@ public class DungeonLobbyNetworkManager : NetworkLobbyManager {
     public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
     {
         Debug.Log("Create lobby player");
-        return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
+        //return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
     }
 
     public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
