@@ -19,16 +19,18 @@ public class DragonScript : PlayerScript
         SelectedSkill = 0;
     }
 
-    public void Start()
+    protected override void Start()
     {
         m_RemoveAddRoom = GetComponent<RemoveAddRoom>();
         m_PlaceTrap = GetComponent<PlaceTrap>();
         m_PlaceDragonling = GetComponent<PlaceDragonling>();
         m_FireBreath = GetComponent<FireBreath>();
         m_Entomb = GetComponent<Entomb>();
+
+        base.Start();
     }
     
-    public void Update()
+    protected override void Update()
     {
         if (ControlsManager.TapActionRequested())
 	    {
@@ -56,6 +58,8 @@ public class DragonScript : PlayerScript
                 }
             }
 	    }
+
+        base.Update();
     }
 
     public enum eSkill
