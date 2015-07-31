@@ -21,8 +21,11 @@ public abstract class CharacterScript : NetworkBehaviour {
 
         m_NameTag = transform.FindChild("NameTag");
         m_HealthBar = transform.FindChild("HealthBar");
-        m_NameTagSpace = GameObject.Find("Name Space").transform;
-        transform.SetParent(m_NameTagSpace);
+        if (m_NameTag && m_HealthBar)
+        {
+            m_NameTagSpace = GameObject.Find("Name Space").transform;
+            transform.SetParent(m_NameTagSpace);
+        }
 
         if (!isServer && !isLocalPlayer)
         {
@@ -64,7 +67,14 @@ public abstract class CharacterScript : NetworkBehaviour {
             m_Renderer.enabled = true;
         }
 
-        m_NameTag.gameObject.SetActive(m_Renderer.enabled);
+        if (m_NameTag)
+        {
+            m_NameTag.gameObject.SetActive(m_Renderer.enabled);
+        }
+        if (m_HealthBar)
+        {
+            m_HealthBar.gameObject.SetActive(m_Renderer.enabled);
+        }
 	}
 
     /// <summary>
@@ -74,11 +84,13 @@ public abstract class CharacterScript : NetworkBehaviour {
     [Client]
     private void OnCharacterHit(int i_NewHealth)
     {
-        m_HealthBar.FindChild(string.Format("{0}Health", m_Health+1)).GetComponent<RawImage>().enabled = false;
+        if (m_HealthBar)
+        {
+            m_HealthBar.FindChild(string.Format("{0}Health", m_Health + 1)).GetComponent<RawImage>().enabled = false;
+            m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = true;
+        }
 
         m_Health = i_NewHealth < 0 ? m_Health = 0 : i_NewHealth;
-
-        m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = true;
 
         if (m_Health <= 0)
         {
