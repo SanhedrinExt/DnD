@@ -15,7 +15,10 @@ public class AdventurerScript : PlayerScript
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if(Input.GetKey(KeyCode.Space) == true)
+        {
+            CmdMovementManagement(new Vector3(0.19f, -1.64f, 0f));
+        }
 	}
 
     [Command]
