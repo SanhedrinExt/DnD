@@ -41,9 +41,10 @@ public class Graph {
         roomS.roomGraphNode = m_rooms[(int)v2.y, (int)v2.x];
     }
 
-    public void RemovRoom(Vector2 i_roomVec)
+    public void RemovRoom(Vector3 i_roomVec)
     {
-        RoomNode roomToremove = m_rooms[(int)i_roomVec.y, (int)i_roomVec.x];
+        
+        RoomNode roomToremove = convertV3toRoomNode(i_roomVec);
         roomToremove.DeactivatRoom();
         
         while(IsGrathConacted() == false) // בהחרך קיים שחן שחור ואחד לבן
@@ -316,6 +317,6 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
             }
         }
         return res;
-    }
-	
+        
+    }	
 }
