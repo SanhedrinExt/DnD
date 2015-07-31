@@ -7,7 +7,10 @@ public class Graph {
     public const int c_y = 7;
     public const int c_x = 7;
 
-    private Graph() { }
+    private Graph() 
+    {
+
+    }
 
     static private Graph s_singltonGraph;
 
@@ -25,6 +28,7 @@ public class Graph {
     }
 
     public RoomNode[,] m_rooms = new RoomNode[c_y, c_x];
+
 
     public void RemovRoom(Vector2 i_roomVec)
     {
