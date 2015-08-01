@@ -26,7 +26,7 @@ public class DragonScript : PlayerScript
     {
         if (!isServer)
         {
-            dragonSkillsMenu.active = false;
+            dragonSkillsMenu.SetActive(false);
         }
 
         m_RemoveAddRoom = GetComponent<RemoveAddRoom>();
