@@ -2,11 +2,38 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public abstract class CharacterScript : NetworkBehaviour {
 
     [SyncVar(hook="OnCharacterHit")]
     private int m_Health = 5;
+
+    /// <summary>
+    /// Syncvar hooks are called on the clients before being changed.
+    /// We'll use this to check if the character should be destroyed locally.
+    /// </summary>
+    [Client]
+    private void OnCharacterHit(int i_NewHealth)
+    {
+        if (m_HealthBar)
+        {
+            m_HealthBar.FindChild(string.Format("{0}Health", m_Health + 1)).GetComponent<RawImage>().enabled = false;
+            m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = true;
+        }
+
+        m_Health = i_NewHealth < 0 ? m_Health = 0 : i_NewHealth;
+
+        if (m_Health <= 0)
+        {
+            KillCharacter();
+        }
+        else
+        {
+            m_HitSound.Play();
+        }
+    }
+
 
     protected Animator m_Animator;
     private Renderer m_Renderer;
@@ -16,7 +43,6 @@ public abstract class CharacterScript : NetworkBehaviour {
     private Transform m_HealthBar;
     private AudioSource m_HitSound;
     private AudioSource m_DeathSound;
-
 
 	// Use this for initialization
 	protected virtual void Start () {
@@ -82,31 +108,6 @@ public abstract class CharacterScript : NetworkBehaviour {
             m_HealthBar.gameObject.SetActive(m_Renderer.enabled);
         }
 	}
-
-    /// <summary>
-    /// Syncvar hooks are called on the clients before being changed.
-    /// We'll use this to check if the character should be destroyed locally.
-    /// </summary>
-    [Client]
-    private void OnCharacterHit(int i_NewHealth)
-    {
-        if (m_HealthBar)
-        {
-            m_HealthBar.FindChild(string.Format("{0}Health", m_Health + 1)).GetComponent<RawImage>().enabled = false;
-            m_HealthBar.FindChild(string.Format("{0}Health", m_Health)).GetComponent<RawImage>().enabled = true;
-        }
-
-        m_Health = i_NewHealth < 0 ? m_Health = 0 : i_NewHealth;
-
-        if (m_Health <= 0)
-        {
-            KillCharacter();
-        }
-        else
-        {
-            m_HitSound.Play();
-        }
-    }
 
     [Command]
     public void CmdDamageCharacter(int i_Damage)

@@ -4,7 +4,10 @@ using System.Collections;
 public class TrapScript : MonoBehaviour {
 
     [SerializeField]
-    private const int k_TimeToStun = 4000;
+    private int m_TimeToStun = 4000;
+
+    [SerializeField]
+    private int m_Damage = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +22,8 @@ public class TrapScript : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D i_CollisionInfo)
     {
         AdventurerScript AdventurerInTrap =  i_CollisionInfo.gameObject.GetComponent<AdventurerScript>();
-        AdventurerInTrap.CmdStunAdventurer(k_TimeToStun);
+        AdventurerInTrap.CmdStunAdventurer(m_TimeToStun);
+        AdventurerInTrap.CmdDamageCharacter(m_Damage);
         Destroy(gameObject);
     }
 }
