@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [AddComponentMenu("Dungeon/Door Script")]
 public class DoorScript : VisitableObject {
@@ -31,5 +32,11 @@ public class DoorScript : VisitableObject {
         //Otherwise, disable it.
         base.Update();
 	}
-    
+
+
+    [ClientRpc]
+    public void RpcRenderSwitcher(bool p)
+    {
+        gameObject.SetActive(p);
+    }
 }

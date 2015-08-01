@@ -33,6 +33,7 @@ public class RoomNode  {
         }
         m_activRoom = false;
         refRoom.rpcEnabalRoom(false);
+        refRoom.deactivDoorsInRoom();
     }
 
     

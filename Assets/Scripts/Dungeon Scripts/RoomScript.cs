@@ -56,16 +56,26 @@ public class RoomScript : VisitableObject {
         Vector2 v3 = new Vector2( (transform.position.x + room.transform.position.x)/2 ,(transform.position.y + room.transform.position.y)/2 );
         Vector2 s2 = new Vector2(transform.localScale.x, transform.localScale.y);
 
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 30, 1 << LayerMask.NameToLayer("Door")) ;
-
-        foreach (RaycastHit2D hit in hits)
+        RaycastHit2D hit = Physics2D.BoxCast(v3, s2, 0, Vector2.up, s2.x / 30, 1 << LayerMask.NameToLayer("Door")) ;
+        if (hit)
         {
-            Renderer randerer = hit.transform.GetComponent<Renderer>();
-            if (randerer)
-            {
-                randerer.enabled = true;
-                
-            }
+            hit.collider.gameObject.GetComponent<DoorScript>().gameObject.SetActive(true);
+            hit.collider.gameObject.GetComponent<DoorScript>().RpcRenderSwitcher(true);
+        }
+        
+    }
+
+    public void deactivDoorsInRoom()
+    {
+        Vector2 v3 = new Vector2(transform.position.x , transform.position.y );
+        Vector2 s2 = new Vector2(transform.localScale.x, transform.localScale.y);
+
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 10, 1 << LayerMask.NameToLayer("Door"));
+
+        foreach(RaycastHit2D hit in hits)
+        {
+            hit.collider.gameObject.GetComponent<DoorScript>().gameObject.SetActive(false);
+            hit.collider.gameObject.GetComponent<DoorScript>().RpcRenderSwitcher(false);
         }
     }
 
