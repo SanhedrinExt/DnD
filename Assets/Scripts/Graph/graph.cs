@@ -216,7 +216,15 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
     {
         bool res = true;
 
-        Dfs();
+        foreach (RoomNode room in m_rooms)
+        {
+            if(room.m_activRoom == true)
+            {
+                ResetColor();
+                Visit(room);
+                break;
+            }
+        }
 
         foreach (RoomNode room in m_rooms)
         {
@@ -302,6 +310,11 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
         m_rooms[(int)v1.y, (int)v1.x].m_niebringRooms.Add(m_rooms[(int)v2.y, (int)v2.x]);
         m_rooms[(int)v2.y, (int)v2.x].m_niebringRooms.Add(m_rooms[(int)v1.y, (int)v1.x]);
     }
+
+    public RoomScript ConvertV3ToRoomScript(Vector3 v3)
+   {
+       return convertV3toRoomNode(v3).refRoom;
+   }
 
     private RoomNode convertV3toRoomNode(Vector3 v3)
     {
