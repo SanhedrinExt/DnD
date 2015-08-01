@@ -57,6 +57,7 @@ public class AdventurerScript : PlayerScript
             if ((int)TimeInStun.TotalMilliseconds >= m_StunDuration)
             {
                 m_IsStunned = false;
+                m_Animator.SetBool("Stunned", false);
             }
         }
     }
@@ -73,6 +74,7 @@ public class AdventurerScript : PlayerScript
     public void CmdStunAdventurer(int i_StunDuration)
     {
         m_IsStunned = true;
+        m_Animator.SetBool("Stunned", true);
         m_StunDuration = i_StunDuration;
         m_StunStartTime = DateTime.Now;
      }

@@ -8,6 +8,7 @@ public abstract class CharacterScript : NetworkBehaviour {
     [SyncVar(hook="OnCharacterHit")]
     private int m_Health = 5;
 
+    protected Animator m_Animator;
     private Renderer m_Renderer;
 
     private Transform m_NameTagSpace;
@@ -18,6 +19,7 @@ public abstract class CharacterScript : NetworkBehaviour {
 	// Use this for initialization
 	protected virtual void Start () {
         m_Renderer = GetComponent<Renderer>();
+        m_Animator = GetComponent<Animator>();
 
         m_NameTag = transform.FindChild("NameTag");
         m_HealthBar = transform.FindChild("HealthBar");
@@ -107,5 +109,6 @@ public abstract class CharacterScript : NetworkBehaviour {
     private void KillCharacter()
     {
         //TODO: Implement character death
+        m_Animator.SetBool("Hit", true);
     }
 }
