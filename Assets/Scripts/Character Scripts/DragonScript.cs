@@ -45,7 +45,7 @@ public class DragonScript : PlayerScript
 		    Vector3 tapVector = ControlsManager.GetTapActionPoint();
             TimeSpan timeFromLastSkillPick = DateTime.Now - m_LastPick;
 
-            if (SelectedSkill != 0 && timeFromLastSkillPick.TotalMilliseconds >= 50)
+            if (SelectedSkill != eSkill.ePlaceDragonlingClicked && timeFromLastSkillPick.TotalMilliseconds >= 50)
             {
                 switch (SelectedSkill)
                 {
@@ -67,8 +67,18 @@ public class DragonScript : PlayerScript
                     default:
                         break;
                 }
+                SelectedSkill = 0;
             }
 	    }
+        else if (Input.GetTouch(0).phase == TouchPhase.Moved && (DateTime.Now - CameraControls.StartPositionTime).TotalMilliseconds <= 500.0)
+        {
+            Vector3 position = Input.GetTouch(0).position;
+            Debug.Log("why???");
+            if (SelectedSkill == eSkill.ePlaceDragonlingClicked && Vector3.Distance(position, CameraControls.StartPosition) > 5f)
+            {
+                m_PlaceDragonling.CmdUseSkill(Camera.main.ScreenToWorldPoint(CameraControls.StartPosition));
+            }
+        }
         base.Update();
     }
 

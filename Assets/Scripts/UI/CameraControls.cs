@@ -7,11 +7,14 @@ using Random = UnityEngine.Random;
 [AddComponentMenu("UI/Camera Controller")]
 public class CameraControls : MonoBehaviour {
 
-    private Vector3 m_StartPosition;
+    public static Vector3 StartPosition { get; private set; }
     private float m_StartDistance;
     private float m_LastDistance;
 
     public static bool s_InMovement = false;
+
+    //Swipe controls
+    public static DateTime StartPositionTime { get; private set; }
 
     public bool InMovement { get { return s_InMovement; } }
 
@@ -72,7 +75,8 @@ public class CameraControls : MonoBehaviour {
         //Input.mousePosition
         if (Input.GetMouseButtonDown(0))
         {
-            m_StartPosition = Input.mousePosition;
+            StartPosition = Input.mousePosition;
+            StartPositionTime = DateTime.Now;
         }
         else if (Input.GetMouseButton(0))
         {
@@ -86,7 +90,8 @@ public class CameraControls : MonoBehaviour {
         if(Input.touchCount == 1){
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                m_StartPosition = Input.GetTouch(0).position;
+                StartPosition = Input.GetTouch(0).position;
+                StartPositionTime = DateTime.Now;
             }
             else if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(0).phase == TouchPhase.Stationary)
             {
@@ -102,9 +107,9 @@ public class CameraControls : MonoBehaviour {
 
     private void moveCamera(Vector3 i_EndPosition)
     {
-        if (Vector3.Distance(m_StartPosition, i_EndPosition) >= m_MinDistance)
+        if (Vector3.Distance(StartPosition, i_EndPosition) >= m_MinDistance)
         {
-            transform.position -= (i_EndPosition - m_StartPosition).normalized * m_CameraVelocity;
+            transform.position -= (i_EndPosition - StartPosition).normalized * m_CameraVelocity;
             s_InMovement = true;
         }
     }

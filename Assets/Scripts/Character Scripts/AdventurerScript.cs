@@ -41,6 +41,7 @@ public class AdventurerScript : PlayerScript
         {
             if (ControlsManager.TapActionRequested())
             {
+                
                 Vector3 moveTo = ControlsManager.GetTapActionPoint();
                 if (!m_IsStunned)
                 {
