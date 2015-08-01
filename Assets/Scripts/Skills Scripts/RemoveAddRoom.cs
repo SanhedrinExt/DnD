@@ -9,7 +9,7 @@ public class RemoveAddRoom : StackableSkill
     [SerializeField]
     private const int k_Cooldown = 3000;
     [SerializeField]
-    private const int k_MaxStacks = 4;
+    private const int k_MaxStacks = 30;
 
     public RemoveAddRoom() : base(k_Cooldown, k_MaxStacks) { }
 

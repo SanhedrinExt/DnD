@@ -6,110 +6,61 @@ Direct3D:
     Vendor:   Intel
     VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.066 seconds
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.039 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\LastFolderOfHackaton\DnD\dnd_Data\Managed\System.dll (this message is harmless)
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.439189 ms
+UnloadTime: 0.477251 ms
+Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Duplicate observer localClient added for Dragon(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 600.
+Total: 0.462711 ms (FindLiveObjects: 0.024375 ms CreateObjectMapping: 0.042764 ms MarkObjects: 0.378465 ms  DeleteObjects: 0.016250 ms)
+
+instantiated trap
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+instantiated trap
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+instantiated trap
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+instantiated trap
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.463497 ms
 Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 489.
-Total: 0.413530 ms (FindLiveObjects: 0.029507 ms CreateObjectMapping: 0.023092 ms MarkObjects: 0.346818 ms  DeleteObjects: 0.012829 ms)
-
-Failed to spawn server object, assetId=f80f13ebff2acb44a5dac62762fdcd netId=23
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-show
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
-UNet Client Disconnect Error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.003338 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 360.
-Total: 0.513599 ms (FindLiveObjects: 0.020526 ms CreateObjectMapping: 0.027796 ms MarkObjects: 0.457150 ms  DeleteObjects: 0.007269 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 382.
+Total: 0.929700 ms (FindLiveObjects: 0.036349 ms CreateObjectMapping: 0.038060 ms MarkObjects: 0.846309 ms  DeleteObjects: 0.007697 ms)
 
