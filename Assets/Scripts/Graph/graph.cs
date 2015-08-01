@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class Graph {
 
-    public const int c_y = 5;
-    public const int c_x = 5;
+    public const int c_y = 7;
+    public const int c_x = 7;
 
     private Graph() 
     {
