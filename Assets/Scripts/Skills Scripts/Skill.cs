@@ -49,7 +49,9 @@ namespace SkillProvider
         }
 
         protected abstract void Activate(Vector3 i_Position);
-        public void UseSkill(Vector3 i_Position)
+        
+        [Command]
+        public void CmdUseSkill(Vector3 i_Position)
         {
             if (m_Active && CooldownTimer <= 0)
             {
