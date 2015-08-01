@@ -18,11 +18,13 @@ public class AdventurerScript : PlayerScript
 
     private Rigidbody2D m_Rigidbody;
     private AudioSource m_StepSounds;
+    private AudioSource m_HitSound;
 
 	// Use this for initialization
 	protected override void Start () {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        m_StepSounds = GetComponent<AudioSource>();
+        m_StepSounds = GetComponents<AudioSource>()[0];
+        m_HitSound = GetComponents<AudioSource>()[0];
 
         base.Start();
 	}

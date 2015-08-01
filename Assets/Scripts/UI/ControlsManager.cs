@@ -30,7 +30,7 @@ public static class ControlsManager
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
 #elif UNITY_ANDROID || UNITY_IOS
-        if(Input.getTouches > 0){
+        if(Input.touchCount > 0){
             target = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
         }
 #endif
