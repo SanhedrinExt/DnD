@@ -54,11 +54,11 @@ public abstract class CharacterScript : NetworkBehaviour {
         {
             if (m_NameTag)
             {
-                m_NameTag.transform.position = transform.position + Vector3.up * (transform.localScale.y / 2);
+                m_NameTag.transform.position = transform.position + Vector3.up / 4;
             }
             if (m_HealthBar)
             {
-                m_HealthBar.transform.position = transform.position - Vector3.up * (transform.localScale.y / 2);
+                m_HealthBar.transform.position = transform.position - Vector3.up / 4;
             }
         }
 

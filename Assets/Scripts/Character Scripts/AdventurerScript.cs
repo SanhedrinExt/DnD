@@ -85,6 +85,8 @@ public class AdventurerScript : PlayerScript
             Vector3 moveDir = (i_RoomPath.Peek() - transform.position).normalized;
             m_Rigidbody.MovePosition(transform.position + moveDir * (Time.deltaTime * m_MoveSpeed));
 
+            RpcSetRotation(moveDir);
+
             if (Vector3.Distance(transform.position, i_RoomPath.Peek()) < 0.1f)
             {
                 i_RoomPath.Pop();
@@ -94,5 +96,18 @@ public class AdventurerScript : PlayerScript
         }
 
         CheckAttack(transform.position);
+    }
+
+    [ClientRpc]
+    private void RpcSetRotation(Vector3 moveDir)
+    {
+        transform.rotation = Quaternion.LookRotation(moveDir);
+        transform.Rotate(new Vector3(0, -90, 0), Space.Self);
+        transform.Rotate(new Vector3(0, 0, 90), Space.Self);
+
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            transform.GetChild(i).rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }

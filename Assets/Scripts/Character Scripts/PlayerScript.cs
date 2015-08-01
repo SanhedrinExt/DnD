@@ -12,6 +12,12 @@ public abstract class PlayerScript : CharacterScript {
 
     protected override void Start()
     {
+        if (isLocalPlayer)
+        {
+            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+            Camera.main.orthographicSize = 1;
+        }
+
         base.Start();
     }
 
