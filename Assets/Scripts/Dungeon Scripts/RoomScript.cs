@@ -64,15 +64,11 @@ public class RoomScript : VisitableObject {
             if (randerer)
             {
                 randerer.enabled = true;
-                RpcSetRanderer(randerer, true);
+                
             }
         }
     }
-    [ClientRpc]
-    private void RpcSetRanderer(Renderer renderer , bool setRanderer)
-    {
-        renderer.enabled = setRanderer;
-    }
+
 
     public void rpcEnabalRoom(bool enabalRoom)
     {
