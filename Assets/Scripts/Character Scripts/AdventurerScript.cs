@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UI;
 
 [AddComponentMenu("Characters/Adventurer Script")]
 public class AdventurerScript : PlayerScript
@@ -18,13 +19,11 @@ public class AdventurerScript : PlayerScript
 
     private Rigidbody2D m_Rigidbody;
     private AudioSource m_StepSounds;
-    private AudioSource m_HitSound;
 
 	// Use this for initialization
 	protected override void Start () {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        m_StepSounds = GetComponents<AudioSource>()[0];
-        m_HitSound = GetComponents<AudioSource>()[0];
+        m_StepSounds = GetComponents<AudioSource>()[2];
 
         base.Start();
 	}
