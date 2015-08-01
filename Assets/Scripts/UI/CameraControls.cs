@@ -82,7 +82,6 @@ public class CameraControls : MonoBehaviour {
         {
             s_InMovement = false;
         }
-
 #elif UNITY_ANDROID || UNITY_IOS
         if(Input.touchCount == 1){
             if (Input.GetTouch(0).phase == TouchPhase.Began)
@@ -93,6 +92,10 @@ public class CameraControls : MonoBehaviour {
             {
                moveCamera(Input.GetTouch(0).position);
             }
+            else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+               s_InMovement = false;
+            }
         }
 #endif
     }
@@ -101,7 +104,7 @@ public class CameraControls : MonoBehaviour {
     {
         if (Vector3.Distance(m_StartPosition, i_EndPosition) >= m_MinDistance)
         {
-            transform.position -= (m_StartPosition - i_EndPosition).normalized * m_CameraVelocity;
+            transform.position -= (i_EndPosition - m_StartPosition).normalized * m_CameraVelocity;
             s_InMovement = true;
         }
     }
