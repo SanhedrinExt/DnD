@@ -84,7 +84,7 @@ public class DragonScript : PlayerScript
         Vector2 s2 = new Vector2(room.transform.localScale.x, room.transform.localScale.y);
         RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 2, 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Dragon"));
 
-        if (hits.Length == 0)
+        if (hits.Length > 0)
             isInRoom = true;
 
         return isInRoom;
