@@ -10,6 +10,7 @@ public class DungeonNetworkManager : NetworkManager {
     [SerializeField]
     private GameObject m_ClientPlayer;
 
+
     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
     {
         base.OnServerAddPlayer(conn, playerControllerId);
@@ -17,7 +18,7 @@ public class DungeonNetworkManager : NetworkManager {
         if (conn.connectionId == conn.hostId)
         {
             NetworkServer.DestroyPlayersForConnection(conn);
-            GameObject player = Instantiate(m_ServerPlayer, startPositions[Random.Range(0, startPositions.Count)].position, Quaternion.identity) as GameObject;
+            GameObject player = Instantiate(m_ServerPlayer, GameObject.Find("DragonSpawn").transform.position, Quaternion.identity) as GameObject;
             NetworkServer.Spawn(player);
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
         }

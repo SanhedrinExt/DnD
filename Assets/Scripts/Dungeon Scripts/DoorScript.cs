@@ -33,6 +33,18 @@ public class DoorScript : VisitableObject {
         base.Update();
 	}
 
+    public override void OnTriggerEnter2D(Collider2D i_Collider)
+    {
+        i_Collider.GetComponent<Animator>().SetBool("Open", true);
+
+        base.OnTriggerEnter2D(i_Collider);
+    }
+
+    public void OnTriggerExit2D(Collider2D i_Collider)
+    {
+        i_Collider.GetComponent<Animator>().SetBool("Open", false);
+
+    }
 
   
 }

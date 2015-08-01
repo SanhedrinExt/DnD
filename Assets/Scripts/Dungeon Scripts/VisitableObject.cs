@@ -40,7 +40,7 @@ public abstract class VisitableObject : NetworkBehaviour
     {
     }
 
-    public void OnTriggerEnter2D(Collider2D i_Collider)
+    public virtual void OnTriggerEnter2D(Collider2D i_Collider)
     {
         CharacterScript charScript = i_Collider.GetComponent<CharacterScript>();
         

@@ -22,3 +22,5 @@
 sysinfo.txt
 
 ProjectVersion.txt
+*.wav
+Assets/Mixer/Sounds/DragonPlay_Hackathon_Music_01.wav.meta

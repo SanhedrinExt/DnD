@@ -143,4 +143,9 @@ public class DragonScript : PlayerScript
         m_LastPick = DateTime.Now;
         SelectedSkill = eSkill.eFireBreathClicked;
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Winner!");
+    }
 }
