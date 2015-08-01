@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 [AddComponentMenu("Dungeon/Room Script")]
 public class RoomScript : VisitableObject {
@@ -33,14 +34,14 @@ public class RoomScript : VisitableObject {
     {
         base.Update();
 	}
-    public void showDoor()
+
+    public void ShowDoors()
     {
-        Debug.Log("show");
-        Vector2 v3 = new Vector2(transform.position.x, transform.position.y); 
+        Vector2 v3 = new Vector2(transform.position.x, transform.position.y);
         Vector2 s2 = new Vector2(transform.localScale.x, transform.localScale.y);
         RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 2, 1 << LayerMask.NameToLayer("Door"));
-       
-        foreach(RaycastHit2D hit in hits)
+
+        foreach (RaycastHit2D hit in hits)
         {
             DoorScript door = hit.transform.GetComponent<DoorScript>();
             if (door)

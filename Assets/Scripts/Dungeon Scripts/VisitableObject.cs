@@ -42,6 +42,8 @@ public abstract class VisitableObject : NetworkBehaviour
 
     public void OnTriggerEnter2D(Collider2D i_Collider)
     {
+        CharacterScript charScript = i_Collider.GetComponent<CharacterScript>();
+
         //When a player enters a visible room, make the player visible and otherwise.
         if (m_HasBeenVisited)
         {
@@ -49,8 +51,6 @@ public abstract class VisitableObject : NetworkBehaviour
         }
         else
         {
-            CharacterScript charScript = i_Collider.GetComponent<CharacterScript>();
-
             if (charScript.isLocalPlayer)
             {
                 m_Renderer.enabled = true;
@@ -61,9 +61,10 @@ public abstract class VisitableObject : NetworkBehaviour
             }
         }
 
-        if (this is RoomScript)
+        RoomScript room = GetComponent<RoomScript>();
+        if (room && charScript.isLocalPlayer)
         {
-            SendMessage("showDoor");
+            room.ShowDoors();
         }
     }
 }
