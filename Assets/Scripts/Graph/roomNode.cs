@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 public enum eColor { White,Black,Grey}
 
@@ -31,8 +32,10 @@ public class RoomNode  {
             niebr.removNiber(this);
         }
         m_activRoom = false;
-        refRoom.gameObject.SetActive(false);
+        refRoom.rpcEnabalRoom(false);
     }
+
+    
 
     public void ActivatRoom(List<RoomNode> i_naebers = null)
     {
@@ -45,6 +48,6 @@ public class RoomNode  {
             }
         }
         m_activRoom = true;
-        refRoom.gameObject.SetActive(true);
+        refRoom.rpcEnabalRoom(true);
     }
 }

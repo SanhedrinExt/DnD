@@ -45,6 +45,7 @@ public class Graph {
     {
         
         RoomNode roomToremove = convertV3toRoomNode(i_roomVec);
+        
         roomToremove.DeactivatRoom();
         
         while(IsGrathConacted() == false) // בהחרך קיים שחן שחור ואחד לבן
@@ -128,15 +129,17 @@ private void ReconctingGrath(BfsNode i_goodStart)
 {
     BfsNode son = i_goodStart ;
     BfsNode dad = son.perent;
-
-    while(m_rooms[(int)dad.mySpot.y,(int)dad.mySpot.x].m_activRoom == false)
+    RoomNode n1 = m_rooms[(int)son.mySpot.y, (int)son.mySpot.x], n2 = m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x];
+    while(n2.m_activRoom == false)
     {
-        m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x].ActivatRoom(new List<RoomNode> { m_rooms[(int)son.mySpot.y, (int)son.mySpot.x] });
+        n2.ActivatRoom(new List<RoomNode> { n1 });
         son = dad;
         dad = dad.perent;
     }
-    m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x].m_niebringRooms.Add(m_rooms[(int)son.mySpot.y, (int)son.mySpot.x]);
-    m_rooms[(int)son.mySpot.y, (int)son.mySpot.x].m_niebringRooms.Add(m_rooms[(int)dad.mySpot.y, (int)dad.mySpot.x]);
+    n2.m_niebringRooms.Add(n1);
+    n1.m_niebringRooms.Add(n2);
+
+    n2.refRoom.FindTheDoorBetwin2RoomsAndActivate(n1.refRoom);
 }
 
 private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arcivs)

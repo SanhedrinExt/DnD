@@ -26,7 +26,7 @@ public class DragonScript : PlayerScript
     {
         if (!isServer)
         {
-            dragonSkillsMenu.active = false;
+            dragonSkillsMenu.SetActive(false);
         }
 
         m_RemoveAddRoom = GetComponent<RemoveAddRoom>();
@@ -52,17 +52,17 @@ public class DragonScript : PlayerScript
                     case eSkill.eAddRemoveRoomClicked:
                         if (!PlayerInRoom(tapVector))
                         {
-                            m_RemoveAddRoom.UseSkill(tapVector);
+                            m_RemoveAddRoom.CmdUseSkill(tapVector);
                         }
                         break;
                     case eSkill.ePlaceTrapClicked:
-                        m_PlaceTrap.UseSkill(tapVector);
+                        m_PlaceTrap.CmdUseSkill(tapVector);
                         break;
                     case eSkill.eEntombClicked:
-                        m_Entomb.UseSkill(tapVector);
+                        m_Entomb.CmdUseSkill(tapVector);
                         break;
                     case eSkill.eFireBreathClicked:
-                        m_FireBreath.UseSkill(tapVector);
+                        m_FireBreath.CmdUseSkill(tapVector);
                         break;
                     default:
                         break;
