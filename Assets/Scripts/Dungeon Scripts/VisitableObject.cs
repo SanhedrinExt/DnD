@@ -64,7 +64,7 @@ public abstract class VisitableObject : NetworkBehaviour
         RoomScript room = GetComponent<RoomScript>();
         if (room && charScript.isLocalPlayer)
         {
-            room.ShowDoors();
+            room.ShowRoomObjacts(true);
         }
     }
 }
