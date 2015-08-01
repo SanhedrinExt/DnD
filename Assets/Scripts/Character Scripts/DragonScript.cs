@@ -14,17 +14,9 @@ public class DragonScript : PlayerScript
 
     private DateTime m_LastPick = DateTime.Now;
 
-    [SerializeField]
-    private GameObject m_DragonSkillMenu;
-
     public DragonScript()
     {
         SelectedSkill = 0;
-
-        if (!isServer)
-        {
-            m_DragonSkillMenu.active = false;
-        }
     }
 
     protected override void Start()
