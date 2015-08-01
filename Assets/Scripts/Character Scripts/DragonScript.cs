@@ -14,6 +14,9 @@ public class DragonScript : PlayerScript
 
     private DateTime m_LastPick = DateTime.Now;
 
+    [SerializeField]
+    GameObject dragonSkillsMenu;
+
     public DragonScript()
     {
         SelectedSkill = 0;
@@ -21,6 +24,11 @@ public class DragonScript : PlayerScript
 
     protected override void Start()
     {
+        if (!isServer)
+        {
+            dragonSkillsMenu.active = false;
+        }
+
         m_RemoveAddRoom = GetComponent<RemoveAddRoom>();
         m_PlaceTrap = GetComponent<PlaceTrap>();
         m_PlaceDragonling = GetComponent<PlaceDragonling>();

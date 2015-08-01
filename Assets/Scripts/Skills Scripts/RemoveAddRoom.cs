@@ -15,7 +15,7 @@ public class RemoveAddRoom : StackableSkill
 
     protected sealed override void Activate(Vector3 i_Position)
     {
-        // TODO... 
+        Graph.GraphSingleton.RemovRoom(i_Position); 
     }
 
     public override void Start()
