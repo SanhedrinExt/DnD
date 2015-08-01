@@ -34,9 +34,5 @@ public class DoorScript : VisitableObject {
 	}
 
 
-    [ClientRpc]
-    public void RpcRenderSwitcher(bool p)
-    {
-        gameObject.SetActive(p);
-    }
+  
 }

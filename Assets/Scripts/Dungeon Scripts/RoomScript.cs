@@ -59,11 +59,12 @@ public class RoomScript : VisitableObject {
         RaycastHit2D hit = Physics2D.BoxCast(v3, s2, 0, Vector2.up, s2.x / 30, 1 << LayerMask.NameToLayer("Door")) ;
         if (hit)
         {
-            hit.collider.gameObject.GetComponent<DoorScript>().gameObject.SetActive(true);
-            hit.collider.gameObject.GetComponent<DoorScript>().RpcRenderSwitcher(true);
+            hit.collider.gameObject.GetComponent<Renderer>().enabled = true;
+            RpcDoorRenderSwitcher(hit, true);
         }
         
     }
+
 
     public void deactivDoorsInRoom()
     {
@@ -74,11 +75,15 @@ public class RoomScript : VisitableObject {
 
         foreach(RaycastHit2D hit in hits)
         {
-            hit.collider.gameObject.GetComponent<DoorScript>().gameObject.SetActive(false);
-            hit.collider.gameObject.GetComponent<DoorScript>().RpcRenderSwitcher(false);
+            hit.collider.gameObject.GetComponent<Renderer>().enabled = false;
+            RpcDoorRenderSwitcher(hit, false);
         }
     }
-
+    [ClientRpc]
+    public void RpcDoorRenderSwitcher(RaycastHit2D hit,bool p)
+    {
+        hit.collider.gameObject.GetComponent<Renderer>().enabled = p;
+    }
 
     public void rpcEnabalRoom(bool enabalRoom)
     {
