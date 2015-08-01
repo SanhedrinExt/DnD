@@ -70,7 +70,7 @@ public class DragonScript : PlayerScript
                 SelectedSkill = 0;
             }
 	    }
-        else if (Input.GetTouch(0).phase == TouchPhase.Moved && (DateTime.Now - CameraControls.StartPositionTime).TotalMilliseconds <= 500.0)
+        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && (DateTime.Now - CameraControls.StartPositionTime).TotalMilliseconds <= 500.0)
         {
             Vector3 position = Input.GetTouch(0).position;
             Debug.Log("why???");
