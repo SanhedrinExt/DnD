@@ -50,7 +50,10 @@ public class DragonScript : PlayerScript
                 switch (SelectedSkill)
                 {
                     case eSkill.eAddRemoveRoomClicked:
-                        m_RemoveAddRoom.UseSkill(tapVector);
+                        if (!PlayerInRoom(tapVector))
+                        {
+                            m_RemoveAddRoom.UseSkill(tapVector);
+                        }
                         break;
                     case eSkill.ePlaceTrapClicked:
                         m_PlaceTrap.UseSkill(tapVector);
@@ -67,6 +70,31 @@ public class DragonScript : PlayerScript
             }
 	    }
         base.Update();
+    }
+
+    private bool PlayerInRoom(Vector3 i_Position)
+    {
+        bool isInRoom = false;
+        RoomScript room = Graph.GraphSingleton.ConvertV3ToRoomScript(i_Position);
+        if (room == null)
+        {
+            return true;
+        }
+        Vector2 v3 = new Vector2(room.transform.position.x, room.transform.position.y);
+        Vector2 s2 = new Vector2(room.transform.localScale.x, room.transform.localScale.y);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 2, 1 << LayerMask.NameToLayer("Player"));
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            PlayerScript player = hit.transform.GetComponent<PlayerScript>();
+            if (player)
+            {
+                isInRoom = true;
+                break;
+            }
+        }
+
+        return isInRoom;
     }
 
     public enum eSkill
