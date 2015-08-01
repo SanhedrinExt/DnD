@@ -110,7 +110,6 @@ public class AdventurerScript : PlayerScript
     {
         if (isLocalPlayer)
         {
-            Debug.Log(m_StepSounds.isPlaying);
             if (!m_StepSounds.isPlaying)
             {
                 m_StepSounds.Play();

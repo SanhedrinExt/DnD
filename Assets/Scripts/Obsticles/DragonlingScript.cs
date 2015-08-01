@@ -40,6 +40,5 @@ public class DragonlingScript : NetworkBehaviour
     private void fire()
     {
         GameObject fireBall = Instantiate(m_FireBallPrefab, transform.position, transform.rotation) as GameObject;
-        //fireBall.GetComponent<Rigidbody2D>().velocity = 
     }
 }
