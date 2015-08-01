@@ -16,500 +16,156 @@ Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Ma
 Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.093 seconds
+- Completed reload, in  0.039 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+Initialize engine version: 5.1.2f1 (afd2369b692a)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4600 (ID=0x416)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.039 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Guy\Desktop\Unity Projects\Hackathon\DnD\dnd_Data\Managed\System.dll (this message is harmless)
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Spawn scene object not found for 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 6
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 7
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 11
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 14
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 15
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 16
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 17
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 19
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 21
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Failed to spawn server object, assetId=f80f13ebff2acb44a5dac62762fdcd netId=23
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-UnloadTime: 1.140952 ms
+UnloadTime: 0.718012 ms
 Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
-A connection has already been set as ready. There can only be one.
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[UnityEngine.Transform].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at DungeonLobbyNetworkManager.OnLobbyServerCreateGamePlayer (UnityEngine.Networking.NetworkConnection conn, Int16 playerControllerId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkLobbyManager.SceneLoadedForPlayer (UnityEngine.Networking.NetworkConnection conn, UnityEngine.GameObject lobbyPlayerGameObject) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkLobbyManager.OnServerSceneLoadedMessage (UnityEngine.Networking.NetworkMessage netMsg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkMessageHandlers.InvokeHandler (Int16 msgType, UnityEngine.Networking.NetworkConnection conn, UnityEngine.Networking.NetworkReader reader, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkServer.InvokeHandlerOnServer (UnityEngine.Networking.ULocalConnectionToServer conn, Int16 msgType, UnityEngine.Networking.MessageBase msg, Int32 channelId) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.ULocalConnectionToServer.Send (Int16 msgType, UnityEngine.Networking.MessageBase msg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkClient.Send (Int16 msgType, UnityEngine.Networking.MessageBase msg) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkLobbyPlayer.SendSceneLoadedMessage () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.NetworkLobbyPlayer.OnLevelWasLoaded () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 497.
+Total: 0.465275 ms (FindLiveObjects: 0.024375 ms CreateObjectMapping: 0.027796 ms MarkObjects: 0.406688 ms  DeleteObjects: 0.005987 ms)
+
+Attempt to send to not connected connection {1}
+ 
+(Filename:  Line: 353)
+
+Failed to send internal buffer conn:1 channel:0 bytesToSend:64
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
+Send Error: 2 conn:1 channel:0 bytesToSend:64
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 492.
-Total: 0.814660 ms (FindLiveObjects: 0.062008 ms CreateObjectMapping: 0.080396 ms MarkObjects: 0.662419 ms  DeleteObjects: 0.008125 ms)
+Empty player list given to NetworkServer.Destroy(), nothing to do.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.805854 ms
+UnloadTime: 0.490934 ms
 Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 358.
-Total: 1.339806 ms (FindLiveObjects: 0.046613 ms CreateObjectMapping: 0.075692 ms MarkObjects: 1.187137 ms  DeleteObjects: 0.029507 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 358.
+Total: 0.366490 ms (FindLiveObjects: 0.020526 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.318594 ms  DeleteObjects: 0.005559 ms)
 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.825779 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
+Attempt to send to not connected connection {1}
+ 
+(Filename:  Line: 353)
+
+Failed to send internal buffer conn:1 channel:0 bytesToSend:64
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
-Failed to spawn server object, assetId=f80f13ebff2acb44a5dac62762fdcd netId=23
+Send Error: 2 conn:1 channel:0 bytesToSend:64
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
-A connection has already been set as ready. There can only be one.
+Empty player list given to NetworkServer.Destroy(), nothing to do.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
+Attempt to send to not connected connection {1}
+ 
+(Filename:  Line: 353)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 492.
-Total: 1.131543 ms (FindLiveObjects: 0.056876 ms CreateObjectMapping: 0.069278 ms MarkObjects: 0.991276 ms  DeleteObjects: 0.013256 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.098872 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
+Failed to send internal buffer conn:1 channel:0 bytesToSend:64
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
+Send Error: 2 conn:1 channel:0 bytesToSend:64
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 358.
-Total: 1.317996 ms (FindLiveObjects: 0.047896 ms CreateObjectMapping: 0.077831 ms MarkObjects: 1.155491 ms  DeleteObjects: 0.034639 ms)
+Empty player list given to NetworkServer.Destroy(), nothing to do.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
-Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.StartServer listen failed.
+Attempt to send to not connected connection {1}
+ 
+(Filename:  Line: 353)
+
+Failed to send internal buffer conn:1 channel:0 bytesToSend:64
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Send Error: 2 conn:1 channel:0 bytesToSend:64
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Empty player list given to NetworkServer.Destroy(), nothing to do.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Attempt to send to not connected connection {1}
+ 
+(Filename:  Line: 353)
+
+Failed to send internal buffer conn:1 channel:0 bytesToSend:532
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Send Error: 2 conn:1 channel:0 bytesToSend:532
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Empty player list given to NetworkServer.Destroy(), nothing to do.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
 
 Socket: bind failed, error: Only one usage of each socket address (protocol/network address/port) is normally permitted.StartServer listen failed.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Spawn scene object not found for 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 6
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 7
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 11
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 14
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 15
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 16
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 17
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 19
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 21
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Failed to spawn server object, assetId=f80f13ebff2acb44a5dac62762fdcd netId=23
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-UnloadTime: 0.723999 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-A connection has already been set as ready. There can only be one.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 492.
-Total: 1.215361 ms (FindLiveObjects: 0.058159 ms CreateObjectMapping: 0.073982 ms MarkObjects: 1.066969 ms  DeleteObjects: 0.015395 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.234605 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 358.
-Total: 1.238454 ms (FindLiveObjects: 0.051317 ms CreateObjectMapping: 0.099213 ms MarkObjects: 1.064403 ms  DeleteObjects: 0.022665 ms)
-
-Spawn scene object not found for 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Spawn scene object not found for 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 6
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 7
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 11
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 14
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 15
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 16
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 17
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 19
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 21
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Failed to spawn server object, assetId=f80f13ebff2acb44a5dac62762fdcd netId=23
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-UnloadTime: 0.620937 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-A connection has already been set as ready. There can only be one.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 492.
-Total: 0.954499 ms (FindLiveObjects: 0.044474 ms CreateObjectMapping: 0.052600 ms MarkObjects: 0.845878 ms  DeleteObjects: 0.010691 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.092200 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 358.
-Total: 1.475796 ms (FindLiveObjects: 0.052600 ms CreateObjectMapping: 0.058159 ms MarkObjects: 1.326976 ms  DeleteObjects: 0.035494 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Spawn scene object not found for 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 6
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 7
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 9
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 10
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 11
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 13
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 14
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 15
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 16
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 17
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 18
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 19
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 20
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Spawn scene object not found for 21
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Failed to spawn server object, assetId=f80f13ebff2acb44a5dac62762fdcd netId=23
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-UnloadTime: 0.923709 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-A connection has already been set as ready. There can only be one.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 492.
-Total: 1.203387 ms (FindLiveObjects: 0.093226 ms CreateObjectMapping: 0.125727 ms MarkObjects: 0.969467 ms  DeleteObjects: 0.011974 ms)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
-UNet Client Disconnect Error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.930123 ms
-Multiple NetworkManagers detected in the scene. Only one NetworkManager can exist at a time. The duplicate NetworkManager will not be used.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
-
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 358.
-Total: 0.883510 ms (FindLiveObjects: 0.040198 ms CreateObjectMapping: 0.049606 ms MarkObjects: 0.774034 ms  DeleteObjects: 0.018816 ms)
 
