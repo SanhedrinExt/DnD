@@ -39,14 +39,14 @@ public class RoomScript : VisitableObject {
     {
         Vector2 v3 = new Vector2(transform.position.x, transform.position.y);
         Vector2 s2 = new Vector2(transform.localScale.x, transform.localScale.y);
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 2, 1 << LayerMask.NameToLayer("Door"));
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 2, 1 << LayerMask.NameToLayer("Door") | 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Dragon"));
 
         foreach (RaycastHit2D hit in hits)
         {
-            DoorScript door = hit.transform.GetComponent<DoorScript>();
-            if (door)
+            Renderer randerer = hit.transform.GetComponent<Renderer>();
+            if (randerer)
             {
-                door.m_Renderer.enabled = true;
+                randerer.enabled = true;
             }
         }
     }
