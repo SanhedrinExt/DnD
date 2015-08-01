@@ -14,12 +14,16 @@ public abstract class CharacterScript : NetworkBehaviour {
     private Transform m_NameTagSpace;
     private Transform m_NameTag;
     private Transform m_HealthBar;
+    private AudioSource m_HitSound;
+    private AudioSource m_DeathSound;
 
 
 	// Use this for initialization
 	protected virtual void Start () {
         m_Renderer = GetComponent<Renderer>();
         m_Animator = GetComponent<Animator>();
+        m_HitSound = GetComponents<AudioSource>()[0];
+        m_DeathSound = GetComponents<AudioSource>()[1];
 
         m_NameTag = transform.FindChild("NameTag");
         m_HealthBar = transform.FindChild("HealthBar");
@@ -98,6 +102,10 @@ public abstract class CharacterScript : NetworkBehaviour {
         {
             KillCharacter();
         }
+        else
+        {
+            m_HitSound.Play();
+        }
     }
 
     [Command]
@@ -110,5 +118,6 @@ public abstract class CharacterScript : NetworkBehaviour {
     {
         //TODO: Implement character death
         m_Animator.SetBool("Hit", true);
+        m_DeathSound.Play();
     }
 }
