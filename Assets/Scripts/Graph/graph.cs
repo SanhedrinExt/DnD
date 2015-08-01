@@ -313,7 +313,11 @@ private List<BfsNode> getGoodNaeibersForBfs(BfsNode i_node,List<Vector2> i_arciv
 
     public RoomScript ConvertV3ToRoomScript(Vector3 v3)
    {
-       return convertV3toRoomNode(v3).refRoom;
+       RoomScript res = null;
+       RoomNode rn =convertV3toRoomNode(v3);
+       if (rn != null) res = rn.refRoom;
+       return res;
+ 
    }
 
     private RoomNode convertV3toRoomNode(Vector3 v3)
