@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 [AddComponentMenu("Dungeon/Room Script")]
 public class RoomScript : VisitableObject {
@@ -33,20 +34,38 @@ public class RoomScript : VisitableObject {
     {
         base.Update();
 	}
-    public void showDoor()
+
+    public void ShowRoomObjacts(bool i_ShowRoomObjacts)
     {
-        Debug.Log("show");
-        Vector2 v3 = new Vector2(transform.position.x, transform.position.y); 
+        Vector2 v3 = new Vector2(transform.position.x, transform.position.y);
         Vector2 s2 = new Vector2(transform.localScale.x, transform.localScale.y);
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 2, 1 << LayerMask.NameToLayer("Door"));
-       
-        foreach(RaycastHit2D hit in hits)
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 10, 1 << LayerMask.NameToLayer("Door") | 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Dragon"));
+
+        foreach (RaycastHit2D hit in hits)
         {
-            DoorScript door = hit.transform.GetComponent<DoorScript>();
-            if (door)
+            Renderer randerer = hit.transform.GetComponent<Renderer>();
+            if (randerer)
             {
-                door.m_Renderer.enabled = true;
+                randerer.enabled = i_ShowRoomObjacts;
             }
         }
     }
+
+    public void FindTheDoorBetwin2RoomsAndActivate(RoomScript room)
+    {
+        Vector2 v3 = new Vector2( (transform.position.x + room.transform.position.x)/2 ,(transform.position.y + room.transform.position.y)/2 );
+        Vector2 s2 = new Vector2(transform.localScale.x, transform.localScale.y);
+
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(v3, s2, 0, Vector2.up, s2.x / 10, 1 << LayerMask.NameToLayer("Door")) ;
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            Renderer randerer = hit.transform.GetComponent<Renderer>();
+            if (randerer)
+            {
+                randerer.enabled = true;             
+            }
+        }
+    }
+
 }
