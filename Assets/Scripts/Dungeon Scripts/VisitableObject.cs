@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 /// </summary>
 public abstract class VisitableObject : NetworkBehaviour
 {
-    protected Renderer m_Renderer;
+    public Renderer m_Renderer;
 
     private bool m_HasBeenVisited;
     public bool HasbeenVisited
@@ -59,6 +59,11 @@ public abstract class VisitableObject : NetworkBehaviour
             {
                 i_Collider.GetComponent<Renderer>().enabled = false;
             }
+        }
+
+        if (this is RoomScript)
+        {
+            SendMessage("showDoor");
         }
     }
 }
