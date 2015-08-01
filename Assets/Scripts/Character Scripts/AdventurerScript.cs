@@ -17,10 +17,12 @@ public class AdventurerScript : PlayerScript
     private int m_StunDuration;
 
     private Rigidbody2D m_Rigidbody;
+    private AudioSource m_StepSounds;
 
 	// Use this for initialization
 	protected override void Start () {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        m_StepSounds = GetComponent<AudioSource>();
 
         base.Start();
 	}
@@ -94,10 +96,24 @@ public class AdventurerScript : PlayerScript
                 i_RoomPath.Pop();
             }
 
+            RpcPlaySteppingSounds();
             yield return null;
         }
 
         CheckAttack(transform.position);
+    }
+
+    [ClientRpc]
+    private void RpcPlaySteppingSounds()
+    {
+        if (isLocalPlayer)
+        {
+            Debug.Log(m_StepSounds.isPlaying);
+            if (!m_StepSounds.isPlaying)
+            {
+                m_StepSounds.Play();
+            }
+        }
     }
 
     [ClientRpc]
